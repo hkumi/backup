@@ -1,0 +1,17 @@
+
+/run/initialize
+#/testhadr/phys/thermalScattering true
+/process/activate msc
+##########proton###############
+/gun/particle neutron
+/gun/pos/type Plane
+/gun/pos/shape Circle
+/gun/pos/centre 0. 0. 70.00001 mm
+/gun/pos/radius 2.5 mm
+/gun/ang/type iso
+/gun/energy 2.0 MeV
+
+#################################################
+/run/beamOn 3000000
+#/run/beamOn 100
+#####################################################

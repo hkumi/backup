@@ -1,0 +1,4 @@
+/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/rebuild_cache.dir
+/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/Simulation.dir
+/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/edit_cache.dir
+/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir
