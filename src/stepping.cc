@@ -15,10 +15,12 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
     const DetectorConstruction *detectorConstruction = static_cast<const DetectorConstruction*> (G4RunManager::GetRunManager()->GetUserDetectorConstruction());
 
     G4LogicalVolume *fScoringVolume = detectorConstruction->GetScoringVolume();
-
+    //collect energy deposition. 
     if(volume != fScoringVolume)
        return;
 
     G4double edep = step->GetTotalEnergyDeposit();
     fEventAction->AddEdep(edep);
+    //collect the track length. 
+    
 }

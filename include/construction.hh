@@ -47,8 +47,8 @@ private:
          
      G4double           fBoxSize;
      G4Material*        fMaterial;     
-     G4Material *Air, *Aerogel,  *polyethylene, *NaI;
-     G4Element  *Na, *I;     
+     G4Material *Air, *Aerogel,  *polyethylene, *NaI, *CF4 ;
+     G4Element  *Na, *I, *C,*N,*O,*F;     
          
      void DefineMaterials();
      virtual void ConstructSDandField();
