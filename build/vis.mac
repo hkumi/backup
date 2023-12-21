@@ -7,6 +7,6 @@
 /vis/scene/add/scale 10 cm
 /vis/scene/add/axes
 /vis/scene/add/eventID
-/vis/scene/endOfEventAction accumulate 1000000
+/vis/scene/endOfEventAction accumulate 1000000000
 #/gun/particle neutron
 /vis/ogl/set/displayListLimit 5000000

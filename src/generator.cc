@@ -15,9 +15,9 @@ MyPrimaryGenerator::MyPrimaryGenerator()
     G4String particleName = "neutron";
     G4ParticleDefinition *particle = particleTable->FindParticle("neutron");
     fParticleGun->SetParticleDefinition(particle);
-    fParticleGun->SetParticleEnergy(2*MeV);
-    fParticleGun->SetParticlePosition(G4ThreeVector(0.*cm,0.*cm,-40.*cm));
-    fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.*cm,0.*cm,1.*cm));
+    fParticleGun->SetParticleEnergy(2.0*MeV);
+    fParticleGun->SetParticlePosition(G4ThreeVector(0.*mm,0.*mm,-19.*mm));
+    fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
     
 
 }
@@ -29,9 +29,22 @@ MyPrimaryGenerator::~MyPrimaryGenerator()
 
 void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
 {
-    G4ThreeVector gunDirection = G4ThreeVector(0, 0, 1);
-    gunDirection += 0.2 * G4ThreeVector(G4UniformRand() - 0.5, G4UniformRand() - 0.5, 0);
-    fParticleGun->SetParticleMomentumDirection(gunDirection);
+/*
+      G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();
+
+      G4String particleName = "proton";
+      G4ParticleDefinition *particle = particleTable->FindParticle("proton");
+ 
+      G4ThreeVector pos(0.,0.,0.);
+      G4ThreeVector mom(0.,0.,1.);
+      fParticleGun->SetParticlePosition(pos);
+      fParticleGun->SetParticleMomentumDirection(mom);
+      fParticleGun->SetParticleMomentum(2.0*MeV);
+      fParticleGun->SetParticleDefinition(particle);
+
+  */  //G4ThreeVector gunDirection = G4ThreeVector(0, 0, 1);
+    //gunDirection += 0.2 * G4ThreeVector(G4UniformRand() - 0.5, G4UniformRand() - 0.5, 0);
+    //fParticleGun->SetParticleMomentumDirection(gunDirection);
 
     fParticleGun->GeneratePrimaryVertex(anEvent);
 

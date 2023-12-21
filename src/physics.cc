@@ -36,9 +36,11 @@ PhysicsList::PhysicsList()
   const G4double meanLife = 1*nanosecond, halfLife = meanLife*std::log(2);
   G4NuclideTable::GetInstance()->SetThresholdOfHalfLife(halfLife);  
   // Neutron Physics
-//  RegisterPhysics( new NeutronHPphysics("neutronHP"));
+  //RegisterPhysics( new NeutronHPphysics("neutronHP"));
   // Optical Physics
-  RegisterPhysics(new G4OpticalPhysics());
+//   RegisterPhysics(new G4EmStandardPhysics());
+
+   RegisterPhysics(new G4OpticalPhysics());
 
   // Hadron Elastic scattering
   RegisterPhysics( new HadronElasticPhysicsHP(verb) );
@@ -53,8 +55,8 @@ PhysicsList::PhysicsList()
   RegisterPhysics( new G4IonPhysicsXS(verb));
 
    // EM physics
-  RegisterPhysics(new ElectromagneticPhysics());
-  ////RegisterPhysics(new G4EmStandardPhysics_option3());
+  //RegisterPhysics(new ElectromagneticPhysics());
+  RegisterPhysics(new G4EmStandardPhysics());
   
   // Decay
 //  RegisterPhysics(new G4DecayPhysics());

@@ -325,33 +325,6 @@ src/construction.cc.s:
 	$(MAKE) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/construction.cc.s
 .PHONY : src/construction.cc.s
 
-src/detector.o: src/detector.cc.o
-
-.PHONY : src/detector.o
-
-# target to build an object file
-src/detector.cc.o:
-	$(MAKE) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/detector.cc.o
-.PHONY : src/detector.cc.o
-
-src/detector.i: src/detector.cc.i
-
-.PHONY : src/detector.i
-
-# target to preprocess a source file
-src/detector.cc.i:
-	$(MAKE) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/detector.cc.i
-.PHONY : src/detector.cc.i
-
-src/detector.s: src/detector.cc.s
-
-.PHONY : src/detector.s
-
-# target to generate assembly for a file
-src/detector.cc.s:
-	$(MAKE) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/src/detector.cc.s
-.PHONY : src/detector.cc.s
-
 src/event.o: src/event.cc.o
 
 .PHONY : src/event.o
@@ -518,9 +491,6 @@ help:
 	@echo "... src/construction.o"
 	@echo "... src/construction.i"
 	@echo "... src/construction.s"
-	@echo "... src/detector.o"
-	@echo "... src/detector.i"
-	@echo "... src/detector.s"
 	@echo "... src/event.o"
 	@echo "... src/event.i"
 	@echo "... src/event.s"

@@ -4,7 +4,7 @@
 #include "G4VUserDetectorConstruction.hh"
 #include "globals.hh"
 
-#include "detector.hh"
+
 #include "G4VUserDetectorConstruction.hh"
 #include "G4VPhysicalVolume.hh"
 #include "G4LogicalVolume.hh"
@@ -17,6 +17,8 @@
 #include "G4OpticalSurface.hh"
 #include "G4LogicalBorderSurface.hh"
 #include "G4LogicalSkinSurface.hh"
+
+//#include "detector.hh"
 class G4LogicalVolume;
 class G4Material;
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -30,7 +32,7 @@ public:
 
     G4LogicalVolume *GetScoringVolume() const {return fScoringVolume;} 
     virtual G4VPhysicalVolume* Construct();
-    void ConstructCherenkov();
+    void ConstructPPAC();
     void ConstructScintillator();
   
 private:
@@ -53,7 +55,7 @@ private:
      void DefineMaterials();
      virtual void ConstructSDandField();
      G4GenericMessenger *fMessenger;
-     G4bool isCherenkov, isScintillator;   
+     G4bool isPPAC, isScintillator;   
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

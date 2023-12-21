@@ -11,7 +11,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/harriet/Geant4/neutron_example/n2/src/NeutronHPphysics.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/NeutronHPphysics.cc.o"
   "/home/harriet/Geant4/neutron_example/n2/src/action.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/action.cc.o"
   "/home/harriet/Geant4/neutron_example/n2/src/construction.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/construction.cc.o"
-  "/home/harriet/Geant4/neutron_example/n2/src/detector.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/detector.cc.o"
   "/home/harriet/Geant4/neutron_example/n2/src/event.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/event.cc.o"
   "/home/harriet/Geant4/neutron_example/n2/src/generator.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/generator.cc.o"
   "/home/harriet/Geant4/neutron_example/n2/src/physics.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/physics.cc.o"

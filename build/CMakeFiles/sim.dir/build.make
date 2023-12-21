@@ -148,22 +148,9 @@ CMakeFiles/sim.dir/src/construction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/construction.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harriet/Geant4/neutron_example/n2/src/construction.cc -o CMakeFiles/sim.dir/src/construction.cc.s
 
-CMakeFiles/sim.dir/src/detector.cc.o: CMakeFiles/sim.dir/flags.make
-CMakeFiles/sim.dir/src/detector.cc.o: ../src/detector.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/sim.dir/src/detector.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sim.dir/src/detector.cc.o -c /home/harriet/Geant4/neutron_example/n2/src/detector.cc
-
-CMakeFiles/sim.dir/src/detector.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sim.dir/src/detector.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/harriet/Geant4/neutron_example/n2/src/detector.cc > CMakeFiles/sim.dir/src/detector.cc.i
-
-CMakeFiles/sim.dir/src/detector.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sim.dir/src/detector.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harriet/Geant4/neutron_example/n2/src/detector.cc -o CMakeFiles/sim.dir/src/detector.cc.s
-
 CMakeFiles/sim.dir/src/event.cc.o: CMakeFiles/sim.dir/flags.make
 CMakeFiles/sim.dir/src/event.cc.o: ../src/event.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/sim.dir/src/event.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/sim.dir/src/event.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sim.dir/src/event.cc.o -c /home/harriet/Geant4/neutron_example/n2/src/event.cc
 
 CMakeFiles/sim.dir/src/event.cc.i: cmake_force
@@ -176,7 +163,7 @@ CMakeFiles/sim.dir/src/event.cc.s: cmake_force
 
 CMakeFiles/sim.dir/src/generator.cc.o: CMakeFiles/sim.dir/flags.make
 CMakeFiles/sim.dir/src/generator.cc.o: ../src/generator.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/sim.dir/src/generator.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/sim.dir/src/generator.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sim.dir/src/generator.cc.o -c /home/harriet/Geant4/neutron_example/n2/src/generator.cc
 
 CMakeFiles/sim.dir/src/generator.cc.i: cmake_force
@@ -189,7 +176,7 @@ CMakeFiles/sim.dir/src/generator.cc.s: cmake_force
 
 CMakeFiles/sim.dir/src/physics.cc.o: CMakeFiles/sim.dir/flags.make
 CMakeFiles/sim.dir/src/physics.cc.o: ../src/physics.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/sim.dir/src/physics.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/sim.dir/src/physics.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sim.dir/src/physics.cc.o -c /home/harriet/Geant4/neutron_example/n2/src/physics.cc
 
 CMakeFiles/sim.dir/src/physics.cc.i: cmake_force
@@ -202,7 +189,7 @@ CMakeFiles/sim.dir/src/physics.cc.s: cmake_force
 
 CMakeFiles/sim.dir/src/run.cc.o: CMakeFiles/sim.dir/flags.make
 CMakeFiles/sim.dir/src/run.cc.o: ../src/run.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/sim.dir/src/run.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/sim.dir/src/run.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sim.dir/src/run.cc.o -c /home/harriet/Geant4/neutron_example/n2/src/run.cc
 
 CMakeFiles/sim.dir/src/run.cc.i: cmake_force
@@ -215,7 +202,7 @@ CMakeFiles/sim.dir/src/run.cc.s: cmake_force
 
 CMakeFiles/sim.dir/src/stepping.cc.o: CMakeFiles/sim.dir/flags.make
 CMakeFiles/sim.dir/src/stepping.cc.o: ../src/stepping.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/sim.dir/src/stepping.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/sim.dir/src/stepping.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sim.dir/src/stepping.cc.o -c /home/harriet/Geant4/neutron_example/n2/src/stepping.cc
 
 CMakeFiles/sim.dir/src/stepping.cc.i: cmake_force
@@ -235,7 +222,6 @@ sim_OBJECTS = \
 "CMakeFiles/sim.dir/src/NeutronHPphysics.cc.o" \
 "CMakeFiles/sim.dir/src/action.cc.o" \
 "CMakeFiles/sim.dir/src/construction.cc.o" \
-"CMakeFiles/sim.dir/src/detector.cc.o" \
 "CMakeFiles/sim.dir/src/event.cc.o" \
 "CMakeFiles/sim.dir/src/generator.cc.o" \
 "CMakeFiles/sim.dir/src/physics.cc.o" \
@@ -252,7 +238,6 @@ sim: CMakeFiles/sim.dir/src/NeutronHPMessenger.cc.o
 sim: CMakeFiles/sim.dir/src/NeutronHPphysics.cc.o
 sim: CMakeFiles/sim.dir/src/action.cc.o
 sim: CMakeFiles/sim.dir/src/construction.cc.o
-sim: CMakeFiles/sim.dir/src/detector.cc.o
 sim: CMakeFiles/sim.dir/src/event.cc.o
 sim: CMakeFiles/sim.dir/src/generator.cc.o
 sim: CMakeFiles/sim.dir/src/physics.cc.o
@@ -300,7 +285,7 @@ sim: /home/harriet/Geant4/geant4-v11.1.3/geant4_install/lib/libG4global.so
 sim: /home/harriet/Geant4/geant4-v11.1.3/geant4_install/lib/libG4clhep.so
 sim: /home/harriet/Geant4/geant4-v11.1.3/geant4_install/lib/libG4ptl.so.2.3.3
 sim: CMakeFiles/sim.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable sim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable sim"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sim.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

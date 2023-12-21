@@ -1,16 +1,21 @@
 #include "run.hh"
-
+#include "G4UnitsTable.hh"
+#include "G4SystemOfUnits.hh"
 MyRunAction::MyRunAction()
 {
     G4AnalysisManager *man = G4AnalysisManager::Instance();
-
+    man->SetVerboseLevel( 1 );
     man->CreateNtuple("Photons", "Photons");
     man->CreateNtupleIColumn("fEvent");
     man->CreateNtupleDColumn("fX");
     man->CreateNtupleDColumn("fY");
     man->CreateNtupleDColumn("fZ");
-    man->CreateNtupleDColumn("fT");
+   // man->CreateNtupleDColumn("fT");
+
     man->FinishNtuple(0);
+
+    // Set axis titles
+    
 
     man->CreateNtuple("Hits", "Hits");
     man->CreateNtupleIColumn("fEvent");
@@ -22,6 +27,12 @@ MyRunAction::MyRunAction()
     man->CreateNtuple("Scoring", "Scoring");
     man->CreateNtupleDColumn("fEdep");
     man->FinishNtuple(2);
+    man->CreateH1("Energy spectrum","Energy Spectrum",100,0.0,1.0*MeV);
+    man->SetH1XAxisTitle(0, "Energy [MeV]");
+    man->SetH1YAxisTitle(0, "Number of counts");
+
+    
+
 }
 
 MyRunAction::~MyRunAction()

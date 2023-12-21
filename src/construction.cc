@@ -1,17 +1,22 @@
 #include "construction.hh"
 #include "G4UnitsTable.hh"
 #include "G4SystemOfUnits.hh"
+#include "G4MultiFunctionalDetector.hh"
+#include "G4VPrimitiveScorer.hh"
+#include "G4SDManager.hh"
+#include "G4VSensitiveDetector.hh"
+#include "CLHEP/Units/SystemOfUnits.h"
 #include <algorithm>
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 DetectorConstruction::DetectorConstruction()
 {
 
-    fMessenger = new G4GenericMessenger(this, "/detector/", "myDetector Construction");
-    fMessenger->DeclareProperty("cherenkov", isCherenkov, "Construct Cherenkov detector");
-    fMessenger->DeclareProperty("scintillator", isScintillator, "Construct Scintillator");
-    isCherenkov = true;
-    isScintillator = false;
+//    fMessenger = new G4GenericMessenger(this, "/detector/", "myDetector Construction");
+  //  fMessenger->DeclareProperty("cherenkov", isCherenkov, "Construct Cherenkov detector");
+    //fMessenger->DeclareProperty("scintillator", isScintillator, "Construct Scintillator");
+    //isCherenkov = true;
+    //isScintillator = false;
     DefineMaterials();
 }
 
@@ -65,7 +70,9 @@ void DetectorConstruction::DefineMaterials()
 
  //...................................creating the optical detector material ...................................
 //----------------------------------- CarbonTetrafluoride ------------------------
-  CF4 = new G4Material("CF4", 3.72*mg/cm3,2,kStateGas);
+  G4double pressure = 0.0328947*atmosphere; //25Torr
+  G4double temperature = 293.15*kelvin; // 
+  CF4 = new G4Material("CF4", 0.1223*mg/cm3,2,kStateGas,temperature,pressure);
   CF4->AddElement(C,1);
   CF4->AddElement(F,4);
 
@@ -187,28 +194,28 @@ void DetectorConstruction::DefineMaterials()
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo.....
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-void DetectorConstruction::ConstructCherenkov()
+void DetectorConstruction::ConstructPPAC()
 {
 
 // scores
-  G4double ScThick = 0.01*m;
+  G4double ScThick =  3.0*mm;
 
   auto sScore = new G4Box("sScore",
-                            0.4*m,0.4*m,ScThick);
+                            40*cm,40*cm,ScThick);
 
   auto fLScore = new G4LogicalVolume(sScore,
-                                      CF4,
+                                       CF4,
                                       "fLScore");
 
   auto fPScore_r = new G4PVPlacement(0,
-                                    G4ThreeVector(0.*m,0.*m,0.25*m),
+                                    G4ThreeVector(0.*cm,0.*cm,20*cm),
                                     fLScore,
                                     "fPScore_r",
                                     fLBox,
                                     false,
                                     0,true);
   fScoringVolume = fLScore;
-
+/*
   auto solidDetector = new G4Box("solidDetector",0.005*m,0.005*m,0.01*m);
   auto logicDetector = new G4LogicalVolume(solidDetector, Air, "logicDetector");
   for (G4int i = 0; i < 100; i++)
@@ -220,9 +227,9 @@ void DetectorConstruction::ConstructCherenkov()
       }
 
 
-  }
+  }*/
 }
-
+/*
 void DetectorConstruction::ConstructScintillator()
 {
     solidScintillator = new G4Tubs("solidScintillator", 10*cm, 20*cm, 30*cm,0*deg,360*deg);
@@ -232,7 +239,7 @@ void DetectorConstruction::ConstructScintillator()
 
 
     physScintillator = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicScintillator, "physScintillator", fLBox, false, 0, true);
-}
+}*/
 
   
 
@@ -240,7 +247,7 @@ void DetectorConstruction::ConstructScintillator()
 G4VPhysicalVolume *DetectorConstruction::Construct()
 {
 
-  fBoxSize = 1*m;
+  fBoxSize = 100*cm;
 
 
   sBox = new G4Box("world",                             //its name
@@ -259,12 +266,13 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
                             0);                         //copy number
 
   // shielding
-  ShThick = 0.01*m;
-  G4double ShSize = 1*m;
-  G4double ShPos = 0.05*m;
+
+  ShThick = 10*cm;
+  G4double ShSize = 100*cm;
+  G4double ShPos = 0*cm;
 
   sShield = new G4Box("shield",
-                    ShSize/2,ShSize/2,ShThick/2);
+                    45*cm,45*cm,ShThick);
 
   fLShield = new G4LogicalVolume(sShield,
                                       polyethylene ,
@@ -278,12 +286,8 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
                               false,
                               0);
   
-  if(isCherenkov)
-    ConstructCherenkov();
-  if(isScintillator)
-    ConstructScintillator();
 
-
+  ConstructPPAC();
   return fPBox;
 }
 
@@ -294,10 +298,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
 
 void DetectorConstruction::ConstructSDandField()
 {
-
-     MySensitiveDetector *sensDet = new MySensitiveDetector("SensitiveDetector");
-
-    if(logicDetector != NULL)
-       //if(isCherenkov)
-       logicDetector->SetSensitiveDetector(sensDet);
+ // sensitive detectors -----------------------------------------------------
+  G4SDManager* SDman = G4SDManager::GetSDMpointer();
+  SDman->SetVerboseLevel(0);
 }
