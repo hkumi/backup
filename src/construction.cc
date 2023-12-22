@@ -12,11 +12,6 @@
 DetectorConstruction::DetectorConstruction()
 {
 
-//    fMessenger = new G4GenericMessenger(this, "/detector/", "myDetector Construction");
-  //  fMessenger->DeclareProperty("cherenkov", isCherenkov, "Construct Cherenkov detector");
-    //fMessenger->DeclareProperty("scintillator", isScintillator, "Construct Scintillator");
-    //isCherenkov = true;
-    //isScintillator = false;
     DefineMaterials();
 }
 
@@ -194,7 +189,7 @@ void DetectorConstruction::DefineMaterials()
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo.....
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-void DetectorConstruction::ConstructPPAC()
+void DetectorConstruction::ConstructPPAC(G4double Pos_PPAC)
 {
 
 // scores
@@ -208,40 +203,27 @@ void DetectorConstruction::ConstructPPAC()
                                       "fLScore");
 
   auto fPScore_r = new G4PVPlacement(0,
-                                    G4ThreeVector(0.*cm,0.*cm,20*cm),
+                                    G4ThreeVector(0.*cm,0.*cm,Pos_PPAC),
                                     fLScore,
                                     "fPScore_r",
                                     fLBox,
                                     false,
                                     0,true);
   fScoringVolume = fLScore;
-/*
-  auto solidDetector = new G4Box("solidDetector",0.005*m,0.005*m,0.01*m);
-  auto logicDetector = new G4LogicalVolume(solidDetector, Air, "logicDetector");
-  for (G4int i = 0; i < 100; i++)
-  {   
-      for (G4int j=0;j<100;j++)
-      {
-            G4VPhysicalVolume *physDetector = new G4PVPlacement(0,G4ThreeVector(-0.5*m +(i+0.5)*m/100, -0.5*m+(j+0.5)*m/100, 0.49*m), logicDetector, "physDetector", fLBox, false, j+i*100, true);
-
-      }
-
-
-  }*/
 }
-/*
-void DetectorConstruction::ConstructScintillator()
-{
-    solidScintillator = new G4Tubs("solidScintillator", 10*cm, 20*cm, 30*cm,0*deg,360*deg);
 
-    logicScintillator = new G4LogicalVolume(solidScintillator, NaI, "logicalScintillator");
-    fScoringVolume =  logicScintillator;
-
-
-    physScintillator = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicScintillator, "physScintillator", fLBox, false, 0, true);
-}*/
-
-  
+void DetectorConstruction::CreateAndPlaceShield(G4double thickness, G4double size, G4double position, G4LogicalVolume* motherVolume) {
+    G4Box* shield = new G4Box("shield", size, size, thickness);
+    G4LogicalVolume* lShield = new G4LogicalVolume(shield, polyethylene, "Shield");
+    
+    G4PVPlacement* pShield = new G4PVPlacement(0,
+                                               G4ThreeVector(0.*cm, 0.*cm, position),
+                                               lShield,
+                                               "Shield",
+                                               motherVolume,
+                                               false,
+                                               0);
+}  
 
 
 G4VPhysicalVolume *DetectorConstruction::Construct()
@@ -266,28 +248,96 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
                             0);                         //copy number
 
   // shielding
+/////...........first stack layer ...........................................................................
 
-  ShThick = 10*cm;
-  G4double ShSize = 100*cm;
-  G4double ShPos = 0*cm;
+  fhThick = 0.01 * cm;
+  G4double fhSize = 50 * cm;
+  G4double fhPos = 0 * cm;
 
-  sShield = new G4Box("shield",
-                    45*cm,45*cm,ShThick);
+  CreateAndPlaceShield(fhThick, fhSize, fhPos, fLBox);
+  CreateAndPlaceShield(fhThick, fhSize, 0.07*cm, fLBox);
+  CreateAndPlaceShield(fhThick, fhSize, 0.14*cm, fLBox);
+  CreateAndPlaceShield(fhThick, fhSize, 0.21*cm, fLBox);
+  CreateAndPlaceShield(fhThick, fhSize, 0.28*cm, fLBox);
+//................................end of first stack...............................................................
+  ConstructPPAC(2*cm);
+//:::::::::::::::::::::::::::::::::::::second stack layer:::::::::::::::::::::::::::::::::::::
 
-  fLShield = new G4LogicalVolume(sShield,
-                                      polyethylene ,
-                                      "Shield");
 
-  fPShield = new G4PVPlacement(0,
-                              G4ThreeVector(0.*cm,0.*cm,ShPos),
-                              fLShield,
-                              "Shield",
-                              fLBox,
-                              false,
-                              0);
-  
+  G4double fhThick1 = 0.02 * cm;
+  G4double fhPos1 = 5 * cm;
 
-  ConstructPPAC();
+  CreateAndPlaceShield(fhThick1, fhSize, fhPos1, fLBox);
+  CreateAndPlaceShield(fhThick1, fhSize, 5.07*cm, fLBox);
+  CreateAndPlaceShield(fhThick1, fhSize, 5.14*cm, fLBox);
+  CreateAndPlaceShield(fhThick1, fhSize, 5.21*cm, fLBox);
+  CreateAndPlaceShield(fhThick1, fhSize, 5.28*cm, fLBox);
+   
+
+  ConstructPPAC(7*cm);
+//:::::::::::::::::::::::::::::::::::::end of second stack:::::::::::::::::::::::::::::::.:
+  //:::::::::::::::::::::::::::::::::::::third stack layer:::::::::::::::::::::::::::::::::::::
+
+
+  G4double fhThick2 = 0.03 * cm;
+  G4double fhPos2 = 10 * cm;
+
+  CreateAndPlaceShield(fhThick2, fhSize, fhPos2, fLBox);
+  CreateAndPlaceShield(fhThick2, fhSize, 10.07*cm, fLBox);
+  CreateAndPlaceShield(fhThick2, fhSize, 10.14*cm, fLBox);
+  CreateAndPlaceShield(fhThick2, fhSize, 10.21*cm, fLBox);
+  CreateAndPlaceShield(fhThick2, fhSize, 10.28*cm, fLBox);
+   
+
+  ConstructPPAC(12*cm);
+//:::::::::::::::::::::::::::::::::::::end of third stack:::::::::::::::::::::::::::::::.:
+   //:::::::::::::::::::::::::::::::::::::forth stack layer:::::::::::::::::::::::::::::::::::::
+
+
+  G4double fhThick3 = 0.04 * cm;
+  G4double fhPos3 = 15 * cm;
+
+  CreateAndPlaceShield(fhThick3, fhSize, fhPos3, fLBox);
+  CreateAndPlaceShield(fhThick3, fhSize, 15.07*cm, fLBox);
+  CreateAndPlaceShield(fhThick3, fhSize, 15.14*cm, fLBox);
+  CreateAndPlaceShield(fhThick3, fhSize, 15.21*cm, fLBox);
+  CreateAndPlaceShield(fhThick3, fhSize, 15.28*cm, fLBox);
+   
+
+  ConstructPPAC(17*cm);
+//:::::::::::::::::::::::::::::::::::::end of forth stack:::::::::::::::::::::::::::::::.:
+//:::::::::::::::::::::::::::::::::::::fifth stack layer:::::::::::::::::::::::::::::::::::::
+
+
+  G4double fhThick4 = 0.05 * cm;
+  G4double fhPos4 = 20 * cm;
+
+  CreateAndPlaceShield(fhThick4, fhSize, fhPos4, fLBox);
+  CreateAndPlaceShield(fhThick4, fhSize, 20.07*cm, fLBox);
+  CreateAndPlaceShield(fhThick4, fhSize, 20.14*cm, fLBox);
+  CreateAndPlaceShield(fhThick4, fhSize, 20.21*cm, fLBox);
+  CreateAndPlaceShield(fhThick4, fhSize, 20.28*cm, fLBox);
+   
+
+  ConstructPPAC(22*cm);
+//:::::::::::::::::::::::::::::::::::::end of fifth stack:::::::::::::::::::::::::::::::.:
+
+//:::::::::::::::::::::::::::::::::::::fifth stack layer:::::::::::::::::::::::::::::::::::::
+
+
+  G4double fhThick5 = 0.06 * cm;
+  G4double fhPos5 = 25 * cm;
+
+  CreateAndPlaceShield(fhThick5, fhSize, fhPos4, fLBox);
+  CreateAndPlaceShield(fhThick5, fhSize, 25.07*cm, fLBox);
+  CreateAndPlaceShield(fhThick5, fhSize, 25.14*cm, fLBox);
+  CreateAndPlaceShield(fhThick5, fhSize, 25.21*cm, fLBox);
+  CreateAndPlaceShield(fhThick5, fhSize, 25.28*cm, fLBox);
+   
+
+  ConstructPPAC(27*cm);
+//:::::::::::::::::::::::::::::::::::::end of fifth stack:::::::::::::::::::::::::::::::.:
+
   return fPBox;
 }
 

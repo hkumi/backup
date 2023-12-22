@@ -32,20 +32,24 @@ public:
 
     G4LogicalVolume *GetScoringVolume() const {return fScoringVolume;} 
     virtual G4VPhysicalVolume* Construct();
-    void ConstructPPAC();
-    void ConstructScintillator();
+    void ConstructPPAC(G4double Pos_PPAC);
+    void CreateAndPlaceShield(G4double thickness, G4double size, G4double position, G4LogicalVolume* motherVolume) ;
   
 private:
-     G4Box  *sBox, *sShield,*sScore,*solidDetector;
+     G4Box  *sBox,*FoShield, *TShield,*fShield,*sShield,*sScore,*solidDetector;
+     G4Box *fShield1;
      G4Tubs *solidScintillator;
-     G4VPhysicalVolume* fPShield;
-     G4LogicalVolume   *fLBox,*fLShield,*fLScore, *logicScintillator;
+     G4VPhysicalVolume *ffPShield, *FoPShield,*fPShield,*TPShield;
+     G4VPhysicalVolume *fPShield1;
+     G4LogicalVolume   *fLBox,*ffLShield, *FoLShield,*fLShield,*TLShield,*fLScore, *logicScintillator;
+     G4LogicalVolume   *fLShield1;
      G4LogicalVolume*   logicDetector;
      G4LogicalVolume*   fScoringVolume;
      
      G4VPhysicalVolume *fPBox, *physScintillator;
 
-     G4double           ShThick;
+     G4double           ShThick,ThThick,FohThick;
+     G4double            fhThick,fhThick1;
          
      G4double           fBoxSize;
      G4Material*        fMaterial;     
