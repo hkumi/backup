@@ -149,7 +149,7 @@ void DetectorConstruction::DefineMaterials()
   CF4PropertiesTable->AddProperty("RINDEX", CF4PhotonMomentum_1, CF4RefractiveIndex, iNbEntries_1);
   CF4PropertiesTable->AddProperty("ABSLENGTH", CF4PhotonMomentum_1, CF4AbsorbtionLength, iNbEntries_1);
   CF4PropertiesTable->AddProperty("RAYLEIGH", CF4PhotonMomentum_1, CF4ScatteringLength, iNbEntries_1);
-  //CF4PropertiesTable->AddConstProperty("SCINTILLATIONYIELD", 2500./keV);  // for electron recoil
+  CF4PropertiesTable->AddConstProperty("SCINTILLATIONYIELD", 2500./keV,true);  // for electron recoil
   CF4PropertiesTable->AddConstProperty("RESOLUTIONSCALE", 1.0);
   CF4PropertiesTable->AddConstProperty("FASTTIMECONSTANT", 3.*ns,true);
   CF4PropertiesTable->AddConstProperty("SLOWTIMECONSTANT", 10.*ns,true);
@@ -184,6 +184,7 @@ void DetectorConstruction::DefineMaterials()
   NaI->AddElement(I, 1);
 
 
+     
 //....................End of scintillator material........................................
 }
 
@@ -250,93 +251,133 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   // shielding
 /////...........first stack layer ...........................................................................
 
-  fhThick = 0.01 * cm;
+  fhThick = 0.1 * mm;
   G4double fhSize = 50 * cm;
   G4double fhPos = 0 * cm;
 
   CreateAndPlaceShield(fhThick, fhSize, fhPos, fLBox);
-  CreateAndPlaceShield(fhThick, fhSize, 0.07*cm, fLBox);
-  CreateAndPlaceShield(fhThick, fhSize, 0.14*cm, fLBox);
-  CreateAndPlaceShield(fhThick, fhSize, 0.21*cm, fLBox);
-  CreateAndPlaceShield(fhThick, fhSize, 0.28*cm, fLBox);
+  CreateAndPlaceShield(0.12*mm, fhSize, 0.02*cm, fLBox);
+  CreateAndPlaceShield(0.14*mm, fhSize, 0.04*cm, fLBox);
+  CreateAndPlaceShield(0.16*mm, fhSize, 0.06*cm, fLBox);
+  CreateAndPlaceShield(0.18*mm, fhSize, 0.08*cm, fLBox);
+  CreateAndPlaceShield(0.20*mm, fhSize, 0.10*cm, fLBox);
+  CreateAndPlaceShield(0.22*mm, fhSize, 0.12*cm, fLBox);
+  CreateAndPlaceShield(0.24*mm, fhSize, 0.14*cm, fLBox);
+
 //................................end of first stack...............................................................
   ConstructPPAC(2*cm);
 //:::::::::::::::::::::::::::::::::::::second stack layer:::::::::::::::::::::::::::::::::::::
 
 
-  G4double fhThick1 = 0.02 * cm;
+  G4double fhThick1 = 0.26 * mm;
   G4double fhPos1 = 5 * cm;
 
   CreateAndPlaceShield(fhThick1, fhSize, fhPos1, fLBox);
-  CreateAndPlaceShield(fhThick1, fhSize, 5.07*cm, fLBox);
-  CreateAndPlaceShield(fhThick1, fhSize, 5.14*cm, fLBox);
-  CreateAndPlaceShield(fhThick1, fhSize, 5.21*cm, fLBox);
-  CreateAndPlaceShield(fhThick1, fhSize, 5.28*cm, fLBox);
-   
+  CreateAndPlaceShield(0.28*mm, fhSize, 5.02*cm, fLBox);
+  CreateAndPlaceShield(0.30*mm, fhSize, 5.04*cm, fLBox);
+  CreateAndPlaceShield(0.32*mm, fhSize, 5.06*cm, fLBox);
+  CreateAndPlaceShield(0.34*mm, fhSize, 5.08*cm, fLBox);
+  CreateAndPlaceShield(0.36*mm, fhSize, 5.10*cm, fLBox);
+  CreateAndPlaceShield(0.38*mm, fhSize, 5.12*cm, fLBox);
+  CreateAndPlaceShield(0.40*mm, fhSize, 5.14*cm, fLBox);
+ 
 
   ConstructPPAC(7*cm);
 //:::::::::::::::::::::::::::::::::::::end of second stack:::::::::::::::::::::::::::::::.:
   //:::::::::::::::::::::::::::::::::::::third stack layer:::::::::::::::::::::::::::::::::::::
 
 
-  G4double fhThick2 = 0.03 * cm;
+  G4double fhThick2 = 0.44 * mm;
   G4double fhPos2 = 10 * cm;
 
   CreateAndPlaceShield(fhThick2, fhSize, fhPos2, fLBox);
-  CreateAndPlaceShield(fhThick2, fhSize, 10.07*cm, fLBox);
-  CreateAndPlaceShield(fhThick2, fhSize, 10.14*cm, fLBox);
-  CreateAndPlaceShield(fhThick2, fhSize, 10.21*cm, fLBox);
-  CreateAndPlaceShield(fhThick2, fhSize, 10.28*cm, fLBox);
-   
+  CreateAndPlaceShield(0.46*mm, fhSize, 10.02*cm, fLBox);
+  CreateAndPlaceShield(0.48*mm, fhSize, 10.04*cm, fLBox);
+  CreateAndPlaceShield(0.50*mm, fhSize, 10.06*cm, fLBox);
+  CreateAndPlaceShield(0.52*mm, fhSize, 10.08*cm, fLBox);
+  CreateAndPlaceShield(0.54*mm, fhSize, 10.10*cm, fLBox);
+  CreateAndPlaceShield(0.56*mm, fhSize, 10.12*cm, fLBox);
+  CreateAndPlaceShield(0.58*mm, fhSize, 10.14*cm, fLBox);
+
 
   ConstructPPAC(12*cm);
 //:::::::::::::::::::::::::::::::::::::end of third stack:::::::::::::::::::::::::::::::.:
    //:::::::::::::::::::::::::::::::::::::forth stack layer:::::::::::::::::::::::::::::::::::::
 
 
-  G4double fhThick3 = 0.04 * cm;
+  G4double fhThick3 = 0.60 * mm;
   G4double fhPos3 = 15 * cm;
 
   CreateAndPlaceShield(fhThick3, fhSize, fhPos3, fLBox);
-  CreateAndPlaceShield(fhThick3, fhSize, 15.07*cm, fLBox);
-  CreateAndPlaceShield(fhThick3, fhSize, 15.14*cm, fLBox);
-  CreateAndPlaceShield(fhThick3, fhSize, 15.21*cm, fLBox);
-  CreateAndPlaceShield(fhThick3, fhSize, 15.28*cm, fLBox);
-   
+  CreateAndPlaceShield(0.62*mm, fhSize, 15.02*cm, fLBox);
+  CreateAndPlaceShield(0.64*mm, fhSize, 15.04*cm, fLBox);
+  CreateAndPlaceShield(0.66*mm, fhSize, 15.06*cm, fLBox);
+  CreateAndPlaceShield(0.68*mm, fhSize, 15.08*cm, fLBox);
+  CreateAndPlaceShield(0.70*mm, fhSize, 15.10*cm, fLBox);
+  CreateAndPlaceShield(0.72*mm, fhSize, 15.12*cm, fLBox);
+  CreateAndPlaceShield(0.74*mm, fhSize, 15.14*cm, fLBox);
+ 
 
   ConstructPPAC(17*cm);
 //:::::::::::::::::::::::::::::::::::::end of forth stack:::::::::::::::::::::::::::::::.:
 //:::::::::::::::::::::::::::::::::::::fifth stack layer:::::::::::::::::::::::::::::::::::::
 
 
-  G4double fhThick4 = 0.05 * cm;
-  G4double fhPos4 = 20 * cm;
+//  G4double fhThick4 = 0.76 * mm;
+  //G4double fhPos4 = 20 * cm;
 
-  CreateAndPlaceShield(fhThick4, fhSize, fhPos4, fLBox);
-  CreateAndPlaceShield(fhThick4, fhSize, 20.07*cm, fLBox);
-  CreateAndPlaceShield(fhThick4, fhSize, 20.14*cm, fLBox);
-  CreateAndPlaceShield(fhThick4, fhSize, 20.21*cm, fLBox);
-  CreateAndPlaceShield(fhThick4, fhSize, 20.28*cm, fLBox);
+  CreateAndPlaceShield(0.76*mm, fhSize, 20*cm, fLBox);
+  CreateAndPlaceShield(0.78*mm, fhSize, 20.02*cm, fLBox);
+  CreateAndPlaceShield(0.80*mm, fhSize, 20.04*cm, fLBox);
+  CreateAndPlaceShield(0.82*mm, fhSize, 20.06*cm, fLBox);
+  CreateAndPlaceShield(0.84*mm, fhSize, 20.08*cm, fLBox);
+  CreateAndPlaceShield(0.86*mm, fhSize, 20.10*cm, fLBox);
+  CreateAndPlaceShield(0.88*mm, fhSize, 20.12*cm, fLBox);
+  CreateAndPlaceShield(0.90*mm, fhSize, 20.14*cm, fLBox);
    
+ 
 
   ConstructPPAC(22*cm);
 //:::::::::::::::::::::::::::::::::::::end of fifth stack:::::::::::::::::::::::::::::::.:
 
-//:::::::::::::::::::::::::::::::::::::fifth stack layer:::::::::::::::::::::::::::::::::::::
+//:::::::::::::::::::::::::::::::::::::sixth stack layer:::::::::::::::::::::::::::::::::::::
 
 
-  G4double fhThick5 = 0.06 * cm;
+  G4double fhThick5 = 0.92 * mm;
   G4double fhPos5 = 25 * cm;
 
-  CreateAndPlaceShield(fhThick5, fhSize, fhPos4, fLBox);
-  CreateAndPlaceShield(fhThick5, fhSize, 25.07*cm, fLBox);
-  CreateAndPlaceShield(fhThick5, fhSize, 25.14*cm, fLBox);
-  CreateAndPlaceShield(fhThick5, fhSize, 25.21*cm, fLBox);
-  CreateAndPlaceShield(fhThick5, fhSize, 25.28*cm, fLBox);
-   
+  CreateAndPlaceShield(fhThick5, fhSize, fhPos5, fLBox);
+  CreateAndPlaceShield(0.94*mm, fhSize, 25.02*cm, fLBox);
+  CreateAndPlaceShield(0.96*mm, fhSize, 25.04*cm, fLBox);
+  CreateAndPlaceShield(0.98*mm, fhSize, 25.06*cm, fLBox);
+  CreateAndPlaceShield(1.02*mm, fhSize, 25.08*cm, fLBox);
+  CreateAndPlaceShield(1.04*mm, fhSize, 25.10*cm, fLBox);
+  CreateAndPlaceShield(1.06*mm, fhSize, 25.12*cm, fLBox);
+  CreateAndPlaceShield(1.08*mm, fhSize, 25.14*cm, fLBox);
+
 
   ConstructPPAC(27*cm);
-//:::::::::::::::::::::::::::::::::::::end of fifth stack:::::::::::::::::::::::::::::::.:
+//:::::::::::::::::::::::::::::::::::::end of sixth stack:::::::::::::::::::::::::::::::.:
+
+//:::::::::::::::::::::::::::::::::::::seventh stack layer:::::::::::::::::::::::::::::::::::::
+
+
+  G4double fhThick6 = 1.10 * mm;
+  G4double fhPos6 = 28 * cm;
+
+  CreateAndPlaceShield(fhThick6, fhSize, fhPos6, fLBox);
+  CreateAndPlaceShield(1.12*mm, fhSize, 25.02*cm, fLBox);
+  CreateAndPlaceShield(1.14*mm, fhSize, 25.04*cm, fLBox);
+  CreateAndPlaceShield(1.16*mm, fhSize, 25.06*cm, fLBox);
+  CreateAndPlaceShield(1.18*mm, fhSize, 25.08*cm, fLBox);
+  CreateAndPlaceShield(1.20*mm, fhSize, 25.10*cm, fLBox);
+  CreateAndPlaceShield(1.22*mm, fhSize, 25.12*cm, fLBox);
+  CreateAndPlaceShield(1.24*mm, fhSize, 25.14*cm, fLBox);
+ 
+
+  ConstructPPAC(30*cm);
+//:::::::::::::::::::::::::::::::::::::end of seventh stack:::::::::::::::::::::::::::::::.:
+
 
   return fPBox;
 }
