@@ -197,7 +197,7 @@ void DetectorConstruction::ConstructPPAC(G4double Pos_PPAC)
   G4double ScThick =  3.0*mm;
 
   auto sScore = new G4Box("sScore",
-                            40*cm,40*cm,ScThick);
+                            50*mm,50*mm,ScThick);
 
   auto fLScore = new G4LogicalVolume(sScore,
                                        CF4,
@@ -230,7 +230,7 @@ void DetectorConstruction::CreateAndPlaceShield(G4double thickness, G4double siz
 G4VPhysicalVolume *DetectorConstruction::Construct()
 {
 
-  fBoxSize = 100*cm;
+  fBoxSize = 30*cm;
 
 
   sBox = new G4Box("world",                             //its name
@@ -251,23 +251,26 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   // shielding
 /////...........first stack layer ...........................................................................
 
-  fhThick = 0.1 * mm;
-  G4double fhSize = 50 * cm;
+  fhThick = 1.6 * mm;
+  G4double fhSize = 60 * mm;
   G4double fhPos = 0 * cm;
 
   CreateAndPlaceShield(fhThick, fhSize, fhPos, fLBox);
-  CreateAndPlaceShield(0.12*mm, fhSize, 0.02*cm, fLBox);
-  CreateAndPlaceShield(0.14*mm, fhSize, 0.04*cm, fLBox);
-  CreateAndPlaceShield(0.16*mm, fhSize, 0.06*cm, fLBox);
-  CreateAndPlaceShield(0.18*mm, fhSize, 0.08*cm, fLBox);
-  CreateAndPlaceShield(0.20*mm, fhSize, 0.10*cm, fLBox);
-  CreateAndPlaceShield(0.22*mm, fhSize, 0.12*cm, fLBox);
-  CreateAndPlaceShield(0.24*mm, fhSize, 0.14*cm, fLBox);
+  CreateAndPlaceShield(fhThick, fhSize, 0.02*cm, fLBox);
+  CreateAndPlaceShield(fhThick, fhSize, 0.04*cm, fLBox);
+  CreateAndPlaceShield(fhThick, fhSize, 0.06*cm, fLBox);
+  CreateAndPlaceShield(fhThick, fhSize, 0.08*cm, fLBox);
+  CreateAndPlaceShield(fhThick, fhSize, 0.10*cm, fLBox);
+  CreateAndPlaceShield(fhThick, fhSize, 0.12*cm, fLBox);
+  CreateAndPlaceShield(fhThick, fhSize, 0.14*cm, fLBox);
+  CreateAndPlaceShield(fhThick, fhSize, 0.16*cm, fLBox);
+  CreateAndPlaceShield(fhThick, fhSize, 0.18*cm, fLBox);
+
 
 //................................end of first stack...............................................................
-  ConstructPPAC(2*cm);
+  ConstructPPAC(5*mm);
 //:::::::::::::::::::::::::::::::::::::second stack layer:::::::::::::::::::::::::::::::::::::
-
+/*
 
   G4double fhThick1 = 0.26 * mm;
   G4double fhPos1 = 5 * cm;
@@ -375,7 +378,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   CreateAndPlaceShield(1.24*mm, fhSize, 25.14*cm, fLBox);
  
 
-  ConstructPPAC(30*cm);
+  ConstructPPAC(30*cm);*/
 //:::::::::::::::::::::::::::::::::::::end of seventh stack:::::::::::::::::::::::::::::::.:
 
 
@@ -392,4 +395,10 @@ void DetectorConstruction::ConstructSDandField()
  // sensitive detectors -----------------------------------------------------
   G4SDManager* SDman = G4SDManager::GetSDMpointer();
   SDman->SetVerboseLevel(0);
+
+  //Define Multi-Detector and Register 
+  //--------------------------------------------------------------------------------------------
+  G4MultiFunctionalDetector* det = new G4MultiFunctionalDetector("IonPro");
+  SDman->AddNewDetector(det);
+//  fLScore->SetSensitiveDetector(det);
 }
