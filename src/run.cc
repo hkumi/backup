@@ -26,12 +26,20 @@ MyRunAction::MyRunAction()
     man->FinishNtuple(1);
 
     man->CreateNtuple("Scoring", "Scoring");
-    man->CreateNtupleDColumn("fEdep");
+    man->CreateNtupleDColumn("Edep");
     man->FinishNtuple(2);
+
+    man->CreateNtuple("Scoring_1", "Scoring_1");
+    man->CreateNtupleDColumn("E_silicon");
+    man->FinishNtuple(3);
+
     man->CreateH1("Energy spectrum","Energy Spectrum",100,0.0,1.0*MeV);
     man->SetH1XAxisTitle(0, "Energy [MeV]");
     man->SetH1YAxisTitle(0, "Number of counts");
 
+    man->CreateH2("dE-E","dE-E", 100, 0., 1.0*MeV, 100, 0., 1.0*MeV);
+    man->SetH2XAxisTitle(0, "Energy [MeV]");
+    man->SetH2YAxisTitle(0, "Number of counts");
     
 
 }

@@ -30,9 +30,11 @@ public:
     DetectorConstruction();
    ~DetectorConstruction();
 
-    G4LogicalVolume *GetScoringVolume() const {return fScoringVolume;} 
+    G4LogicalVolume *GetScoringVolume() const {return fScoringVolume;}
+    G4LogicalVolume *GetScoringVolume1() const {return fScoringVolume2;}  
     virtual G4VPhysicalVolume* Construct();
     void ConstructPPAC(G4double Pos_PPAC);
+    void ConstructSilicon_detector(G4double Pos_Silicon);
     void CreateAndPlaceShield(G4double thickness, G4double size, G4double position, G4LogicalVolume* motherVolume) ;
   
 private:
@@ -45,6 +47,7 @@ private:
      G4LogicalVolume   *fLShield1;
      G4LogicalVolume*   logicDetector;
      G4LogicalVolume*   fScoringVolume;
+     G4LogicalVolume*   fScoringVolume2;
      
      G4VPhysicalVolume *fPBox, *physScintillator;
 
@@ -54,6 +57,7 @@ private:
      G4double           fBoxSize;
      G4Material*        fMaterial;     
      G4Material *Air, *Aerogel,  *polyethylene, *NaI, *CF4 ;
+     G4Material *siliconMaterial;
      G4Element  *Na, *I, *C,*N,*O,*F;     
          
      void DefineMaterials();

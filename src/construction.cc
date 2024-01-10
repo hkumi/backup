@@ -62,7 +62,9 @@ void DetectorConstruction::DefineMaterials()
   polyethylene->AddElement(Hpe, natoms=4);
   polyethylene->AddElement(Cpe, natoms=2);
 
-
+  //silicon_detector material
+  nist->FindOrBuildMaterial("G4_Si");
+  siliconMaterial = G4Material::GetMaterial("G4_Si");//G4Material::GetMaterial("G4_Si");
  //...................................creating the optical detector material ...................................
 //----------------------------------- CarbonTetrafluoride ------------------------
   G4double pressure = 0.0328947*atmosphere; //25Torr
@@ -155,6 +157,7 @@ void DetectorConstruction::DefineMaterials()
   CF4PropertiesTable->AddConstProperty("SLOWTIMECONSTANT", 10.*ns,true);
   CF4PropertiesTable->AddConstProperty("YIELDRATIO", 1.0,true);
   CF4->SetMaterialPropertiesTable(CF4PropertiesTable);
+  siliconMaterial->SetMaterialPropertiesTable(CF4PropertiesTable);
 //:....................................................................................
   G4Material *SiO2 = new G4Material("SiO2", 2.201*g/cm3, 2);
   Aerogel = new G4Material("Aerogel", 0.200*g/cm3, 3);
@@ -213,6 +216,30 @@ void DetectorConstruction::ConstructPPAC(G4double Pos_PPAC)
   fScoringVolume = fLScore;
 }
 
+void DetectorConstruction::ConstructSilicon_detector(G4double Pos_Silicon)
+{
+
+// scores
+  G4double SiliconThick =  3.0*mm;
+
+  auto siliconbox = new G4Box("siliconbox",
+                            50*mm,50*mm,SiliconThick);
+
+  auto siliconLV = new G4LogicalVolume(siliconbox,
+                                       siliconMaterial,
+                                      "siliconLV");
+
+  auto siliconPV = new G4PVPlacement(0,
+                                    G4ThreeVector(0.*cm,0.*cm,Pos_Silicon),
+                                    siliconLV,
+                                    "siliconPV",
+                                    fLBox,
+                                    false,
+                                    0,true);
+  fScoringVolume2 = siliconLV;
+}
+
+
 void DetectorConstruction::CreateAndPlaceShield(G4double thickness, G4double size, G4double position, G4LogicalVolume* motherVolume) {
     G4Box* shield = new G4Box("shield", size, size, thickness);
     G4LogicalVolume* lShield = new G4LogicalVolume(shield, polyethylene, "Shield");
@@ -251,24 +278,25 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   // shielding
 /////...........first stack layer ...........................................................................
 
-  fhThick = 1.6 * mm;
+  fhThick = 0.1 * mm;
   G4double fhSize = 60 * mm;
-  G4double fhPos = 0 * cm;
+  G4double fhPos = 0 * mm;
 
   CreateAndPlaceShield(fhThick, fhSize, fhPos, fLBox);
-  CreateAndPlaceShield(fhThick, fhSize, 0.02*cm, fLBox);
-  CreateAndPlaceShield(fhThick, fhSize, 0.04*cm, fLBox);
-  CreateAndPlaceShield(fhThick, fhSize, 0.06*cm, fLBox);
-  CreateAndPlaceShield(fhThick, fhSize, 0.08*cm, fLBox);
-  CreateAndPlaceShield(fhThick, fhSize, 0.10*cm, fLBox);
-  CreateAndPlaceShield(fhThick, fhSize, 0.12*cm, fLBox);
-  CreateAndPlaceShield(fhThick, fhSize, 0.14*cm, fLBox);
-  CreateAndPlaceShield(fhThick, fhSize, 0.16*cm, fLBox);
-  CreateAndPlaceShield(fhThick, fhSize, 0.18*cm, fLBox);
+//  CreateAndPlaceShield(fhThick, fhSize, 0.105*mm, fLBox);
+  //CreateAndPlaceShield(fhThick, fhSize, 0.210*mm, fLBox);
+  //CreateAndPlaceShield(fhThick, fhSize, 0.315*mm, fLBox);
+  //CreateAndPlaceShield(fhThick, fhSize, 0.420*mm, fLBox);
+  //CreateAndPlaceShield(fhThick, fhSize, 0.525*mm, fLBox);
+  //CreateAndPlaceShield(fhThick, fhSize, 0.630*mm, fLBox);
+  //CreateAndPlaceShield(fhThick, fhSize, 0.735*mm, fLBox);
+  //CreateAndPlaceShield(fhThick, fhSize, 0.840*mm, fLBox);
+  //CreateAndPlaceShield(fhThick, fhSize, 0.945*mm, fLBox);
 
 
 //................................end of first stack...............................................................
   ConstructPPAC(5*mm);
+  ConstructSilicon_detector(10*mm);
 //:::::::::::::::::::::::::::::::::::::second stack layer:::::::::::::::::::::::::::::::::::::
 /*
 
