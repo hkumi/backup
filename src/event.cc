@@ -6,7 +6,7 @@ MyEventAction::MyEventAction(MyRunAction*)
 {
     fEdep = 0.;
     fEdep1 = 0.;
-    thickness =0.0;
+ 
 
 }
 
@@ -17,7 +17,6 @@ void MyEventAction::BeginOfEventAction(const G4Event*)
 {
     fEdep = 0.;
     fEdep1 = 0.;
-    thickness =0.0;
 }
 
 void MyEventAction::EndOfEventAction(const G4Event*)
@@ -44,6 +43,6 @@ void MyEventAction::EndOfEventAction(const G4Event*)
           man->AddNtupleRow(2);
        }
            // count thickness histogram
-       man->FillNtupleDColumn(0, thickness);
-       man->AddNtupleRow(3);
+//       man->FillNtupleDColumn(0, thickness);
+  //     man->AddNtupleRow(3);
 }

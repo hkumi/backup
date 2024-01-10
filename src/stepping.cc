@@ -16,7 +16,6 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
 
      G4LogicalVolume *fScoringVolume = detectorConstruction->GetScoringVolume();
      G4LogicalVolume *fScoringVolume2 = detectorConstruction->GetScoringVolume1();
-     G4double get_thickness =  detectorConstruction->GetMaterialThickness();
 
      G4double edep = step->GetTotalEnergyDeposit();
      G4double edep1 = step->GetTotalEnergyDeposit();
@@ -28,7 +27,6 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
 
      if (volume == fScoringVolume){
         fEventAction->AddEdep(edep);
-        fEventAction->AddCounts(get_thickness);
      }
 
      if (volume == fScoringVolume2){

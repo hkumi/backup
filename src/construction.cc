@@ -278,7 +278,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   // shielding
 /////...........first stack layer ...........................................................................
 
-  fhThick = 0.1 * mm;
+  fhThick = 0.2 * mm;
   G4double fhSize = 60 * mm;
   G4double fhPos = 0 * mm;
 
@@ -298,7 +298,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   ConstructPPAC(5*mm);
   ConstructSilicon_detector(10*mm);
 //:::::::::::::::::::::::::::::::::::::second stack layer:::::::::::::::::::::::::::::::::::::
-  mat_thickness = fhThick; 
+//  mat_thickness = fhThick; 
 
  /*  
 
