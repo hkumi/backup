@@ -9,35 +9,29 @@ MySteppingAction::~MySteppingAction()
 {}
 
 void MySteppingAction::UserSteppingAction(const G4Step *step)
-{  
-//    if (step->GetTrack()->GetDefinition()->GetParticleName() == "proton") {    
-    const DetectorConstruction *detectorConstruction = static_cast<const DetectorConstruction*> (G4RunManager::GetRunManager()->GetUserDetectorConstruction());
-    G4LogicalVolume *volume = step->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume();
-//    G4LogicalVolume *volume1 = step->GetPostStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume();
+{
+//  if (step->GetTrack()->GetDefinition()->GetParticleName() == "proton") {    
+     const DetectorConstruction *detectorConstruction = static_cast<const DetectorConstruction*> (G4RunManager::GetRunManager()->GetUserDetectorConstruction());
+     G4LogicalVolume *volume = step->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume();
 
-    G4LogicalVolume *fScoringVolume = detectorConstruction->GetScoringVolume();
-    G4LogicalVolume *fScoringVolume2 = detectorConstruction->GetScoringVolume1();
+     G4LogicalVolume *fScoringVolume = detectorConstruction->GetScoringVolume();
+     G4LogicalVolume *fScoringVolume2 = detectorConstruction->GetScoringVolume1();
+     G4double get_thickness =  detectorConstruction->GetMaterialThickness();
 
      G4double edep = step->GetTotalEnergyDeposit();
      G4double edep1 = step->GetTotalEnergyDeposit();
- 
- /*
-    //collect energy deposition. 
-    if(volume != fScoringVolume)
-       return; */
 
     	// If it's the first step in the volume, save the position. 
-    if (step->IsFirstStepInVolume()) {
+     if (step->IsFirstStepInVolume()) {
         fEventAction->SetPosition(step->GetPreStepPoint()->GetPosition());
-    }
-    //G4double edep = step->GetTotalEnergyDeposit();
-    if(volume == fScoringVolume){
-      fEventAction->AddEdep(edep);
-    }
-    if(volume == fScoringVolume2){
+     }
 
-    //G4double edep1 = step->GetTotalEnergyDeposit();
-      fEventAction->AddEdep1(edep1);
-    
-    }
+     if (volume == fScoringVolume){
+        fEventAction->AddEdep(edep);
+        fEventAction->AddCounts(get_thickness);
+     }
+
+     if (volume == fScoringVolume2){
+        fEventAction->AddEdep1(edep1);
+     }
 }

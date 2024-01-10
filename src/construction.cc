@@ -298,22 +298,24 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   ConstructPPAC(5*mm);
   ConstructSilicon_detector(10*mm);
 //:::::::::::::::::::::::::::::::::::::second stack layer:::::::::::::::::::::::::::::::::::::
-/*
+  mat_thickness = fhThick; 
 
-  G4double fhThick1 = 0.26 * mm;
-  G4double fhPos1 = 5 * cm;
+ /*  
+
+  G4double fhThick1 = 0.12 * mm;
+  G4double fhPos1 = 15 * mm;
 
   CreateAndPlaceShield(fhThick1, fhSize, fhPos1, fLBox);
-  CreateAndPlaceShield(0.28*mm, fhSize, 5.02*cm, fLBox);
-  CreateAndPlaceShield(0.30*mm, fhSize, 5.04*cm, fLBox);
-  CreateAndPlaceShield(0.32*mm, fhSize, 5.06*cm, fLBox);
-  CreateAndPlaceShield(0.34*mm, fhSize, 5.08*cm, fLBox);
-  CreateAndPlaceShield(0.36*mm, fhSize, 5.10*cm, fLBox);
-  CreateAndPlaceShield(0.38*mm, fhSize, 5.12*cm, fLBox);
-  CreateAndPlaceShield(0.40*mm, fhSize, 5.14*cm, fLBox);
+  //CreateAndPlaceShield(0.28*mm, fhSize, 5.02*cm, fLBox);
+  //CreateAndPlaceShield(0.30*mm, fhSize, 5.04*cm, fLBox);
+  //CreateAndPlaceShield(0.32*mm, fhSize, 5.06*cm, fLBox);
+  //CreateAndPlaceShield(0.34*mm, fhSize, 5.08*cm, fLBox);
+  //CreateAndPlaceShield(0.36*mm, fhSize, 5.10*cm, fLBox);
+  //CreateAndPlaceShield(0.38*mm, fhSize, 5.12*cm, fLBox);
+  //CreateAndPlaceShield(0.40*mm, fhSize, 5.14*cm, fLBox);
  
 
-  ConstructPPAC(7*cm);
+  ConstructPPAC(20*mm);
 //:::::::::::::::::::::::::::::::::::::end of second stack:::::::::::::::::::::::::::::::.:
   //:::::::::::::::::::::::::::::::::::::third stack layer:::::::::::::::::::::::::::::::::::::
 

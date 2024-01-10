@@ -27,10 +27,11 @@ MyRunAction::MyRunAction()
 
     man->CreateNtuple("Scoring", "Scoring");
     man->CreateNtupleDColumn("Edep");
+    man->CreateNtupleDColumn("E_silicon");
     man->FinishNtuple(2);
 
-    man->CreateNtuple("Scoring_1", "Scoring_1");
-    man->CreateNtupleDColumn("E_silicon");
+    man->CreateNtuple("Count_Thickness", "Count_Thickness");
+    man->CreateNtupleDColumn("Mat_thickness");
     man->FinishNtuple(3);
 
     man->CreateH1("Energy spectrum","Energy Spectrum",100,0.0,1.0*MeV);

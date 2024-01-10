@@ -20,12 +20,14 @@ public:
     void AddEdep(G4double edep) { fEdep += edep; }
     void AddEdep1(G4double edep1) { fEdep1 += edep1; }
     void SetPosition(G4ThreeVector p) { fPosition = p; }
+    void AddCounts(G4double get_thickness_count)  {thickness +=thickness;}
  
  
 private:
     G4double fEdep;
     G4ThreeVector fPosition;
     G4double fEdep1;
+    G4double thickness;
 };
 
 #endif

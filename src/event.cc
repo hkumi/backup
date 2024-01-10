@@ -6,7 +6,7 @@ MyEventAction::MyEventAction(MyRunAction*)
 {
     fEdep = 0.;
     fEdep1 = 0.;
-     
+    thickness =0.0;
 
 }
 
@@ -17,7 +17,7 @@ void MyEventAction::BeginOfEventAction(const G4Event*)
 {
     fEdep = 0.;
     fEdep1 = 0.;
-    
+    thickness =0.0;
 }
 
 void MyEventAction::EndOfEventAction(const G4Event*)
@@ -30,7 +30,7 @@ void MyEventAction::EndOfEventAction(const G4Event*)
        if (fEdep > 0.0) {
           G4cout << "Energy deposition: " << fEdep*MeV << G4endl;
           man->FillNtupleDColumn(2, 0, fEdep*MeV);
-          man->AddNtupleRow(2);
+         // man->AddNtupleRow(2);
           man->FillNtupleIColumn(0, 0, evt);
           man->FillNtupleDColumn(0, 1, fPosition.getX()*cm);
           man->FillNtupleDColumn(0, 2, fPosition.getY()*cm);
@@ -40,11 +40,10 @@ void MyEventAction::EndOfEventAction(const G4Event*)
           man->FillH1(0,fEdep*MeV);
        }
        if (fEdep1 > 0.0){
-          man->FillNtupleDColumn(3, 0, fEdep1*MeV);
-          man->AddNtupleRow(3);
+          man->FillNtupleDColumn(2, 1, fEdep1*MeV);
+          man->AddNtupleRow(2);
        }
-       if (fEdep > 0.0 && fEdep1 > 0.0) {
-           // Fill 2D histogram
-          man->FillH2(0, fEdep * MeV, fEdep1 * MeV);
-       }
+           // count thickness histogram
+       man->FillNtupleDColumn(0, thickness);
+       man->AddNtupleRow(3);
 }

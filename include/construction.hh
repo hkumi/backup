@@ -31,7 +31,8 @@ public:
    ~DetectorConstruction();
 
     G4LogicalVolume *GetScoringVolume() const {return fScoringVolume;}
-    G4LogicalVolume *GetScoringVolume1() const {return fScoringVolume2;}  
+    G4LogicalVolume *GetScoringVolume1() const {return fScoringVolume2;}
+    G4double GetMaterialThickness() const {return mat_thickness;};  
     virtual G4VPhysicalVolume* Construct();
     void ConstructPPAC(G4double Pos_PPAC);
     void ConstructSilicon_detector(G4double Pos_Silicon);
@@ -48,6 +49,7 @@ private:
      G4LogicalVolume*   logicDetector;
      G4LogicalVolume*   fScoringVolume;
      G4LogicalVolume*   fScoringVolume2;
+     G4double       mat_thickness;
      
      G4VPhysicalVolume *fPBox, *physScintillator;
 
