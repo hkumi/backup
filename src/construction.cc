@@ -278,7 +278,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   // shielding
 /////...........first stack layer ...........................................................................
 
-  fhThick = 0.2 * mm;
+  fhThick = 0.1 * mm;
   G4double fhSize = 60 * mm;
   G4double fhPos = 0 * mm;
 
@@ -418,6 +418,11 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
 //...ooooooooooooooooo..................................oooooooooooooooooooo......
 //...oooooooooooooooo...................................oooooooooooooooooooo.....
 
+/*G4double DetectorConstruction::GetMaterialThickness(G4double thick_value)
+{
+   auto Mat_thick = thick_value;
+  //G4RunManager::GetRunManager()->ReinitializeGeometry();
+}*/
 
 
 void DetectorConstruction::ConstructSDandField()

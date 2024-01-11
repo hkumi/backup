@@ -2602,10 +2602,12 @@ CMakeFiles/sim.dir/src/construction.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/trkdefs.hh
  /home/harriet/Geant4/neutron_example/n2/src/construction.cc
 CMakeFiles/sim.dir/src/event.cc.o
+ ../include/construction.hh
  ../include/event.hh
  ../include/run.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/CLHEP/Geometry/BasicVector3D.h
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/CLHEP/Geometry/Normal3D.h
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/CLHEP/Geometry/Plane3D.h
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/CLHEP/Geometry/Point3D.h
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/CLHEP/Geometry/Transform3D.h
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/CLHEP/Geometry/Transform3D.icc
@@ -2675,6 +2677,8 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/CLHEP/Vector/RotationZ.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/CLHEP/Vector/ThreeVector.h
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/CLHEP/Vector/ThreeVector.icc
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/CLHEP/Vector/TwoVector.h
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/CLHEP/Vector/TwoVector.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4AffineTransform.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4AffineTransform.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Allocator.hh
@@ -2683,6 +2687,8 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4AnalysisManagerState.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4AnalysisUtilities.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4AnalysisVerbose.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4AnyMethod.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4AnyType.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ApplicationState.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4AutoLock.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4AuxiliaryNavServices.hh
@@ -2692,6 +2698,10 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4BinScheme.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4BlockingList.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4BlockingList.icc
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4BoundingEnvelope.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Box.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Box.icc
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4CSGSolid.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ClassificationOfNewTrack.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4DCofThisEvent.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4DataVector.hh
@@ -2708,6 +2718,7 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4EventManager.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Exception.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ExceptionSeverity.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Exp.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Fcn.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ForceCondition.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4GPILSelection.hh
@@ -2719,16 +2730,26 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4GenericAnalysisManager.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4GenericFileManager.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4GenericFileManager.icc
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4GenericMessenger.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4GeomConfig.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4GeomSplitter.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4GeomTypes.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4GlobalConfig.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4HCofThisEvent.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4HnInformation.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4HnManager.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ICRU90StoppingData.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4IonisParamElm.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4IonisParamMat.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Isotope.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4IsotopeVector.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Log.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4LogicalBorderSurface.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4LogicalBorderSurface.icc
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4LogicalSkinSurface.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4LogicalSkinSurface.icc
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4LogicalSurface.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4LogicalSurface.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4LogicalVolume.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4LogicalVolume.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4LorentzVector.hh
@@ -2747,13 +2768,19 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4NavigationLogger.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Navigator.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Navigator.icc
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4NistElementBuilder.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4NistManager.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4NistMaterialBuilder.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4NoProcess.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Normal3D.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4NormalNavigation.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4NormalNavigation.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4NtupleBookingManager.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4NtupleBookingManager.icc
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4OpticalSurface.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4OrderedTable.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4PDefManager.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4PVPlacement.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ParameterisedNavigation.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ParameterisedNavigation.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ParticleChange.hh
@@ -2764,6 +2791,8 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ParticleTable.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ParticleTable.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ParticleTableIterator.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Physics2DVector.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Physics2DVector.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4PhysicsFreeVector.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4PhysicsModelCatalog.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4PhysicsTable.hh
@@ -2771,6 +2800,10 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4PhysicsVector.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4PhysicsVector.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4PhysicsVectorType.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Plane3D.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Point3D.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Polyhedron.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Pow.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4PrimaryParticle.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4PrimaryTransformer.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4PrimaryVertex.hh
@@ -2810,6 +2843,7 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SteppingManager.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4String.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4String.icc
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SurfaceProperty.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SystemOfUnits.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4TH1ToolsManager.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4TH2ToolsManager.hh
@@ -2840,12 +2874,18 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4TrackingMessenger.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4TrajectoryContainer.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Transform3D.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Tubs.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Tubs.icc
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4TwoVector.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Types.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UAdapter.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UBox.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UIcommand.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UIdirectory.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UImessenger.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UIparameter.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UItokenNum.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UTubs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UnitsTable.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UnitsTable.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UserEventAction.hh
@@ -2858,6 +2898,7 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VDigiCollection.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VExternalNavigation.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VFileManager.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VGraphicsScene.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VHitsCollection.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VNtupleManager.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VPVParameterisation.hh
@@ -2874,12 +2915,19 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VTouchable.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VTouchable.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VTrajectory.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VUserDetectorConstruction.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VUserEventInformation.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VUserTrackInformation.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VVolumeMaterialScanner.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VisExtent.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Visible.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Visible.icc
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VoxelLimits.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VoxelLimits.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VoxelNavigation.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VoxelNavigation.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ios.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/HepPolyhedron.h
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/PTL/Globals.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/PTL/Types.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/PTL/Utility.hh

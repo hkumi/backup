@@ -4,7 +4,6 @@
 #include "G4VUserDetectorConstruction.hh"
 #include "globals.hh"
 
-
 #include "G4VUserDetectorConstruction.hh"
 #include "G4VPhysicalVolume.hh"
 #include "G4LogicalVolume.hh"
@@ -32,7 +31,7 @@ public:
 
     G4LogicalVolume *GetScoringVolume() const {return fScoringVolume;}
     G4LogicalVolume *GetScoringVolume1() const {return fScoringVolume2;}
-    G4double GetMaterialThickness() const {return mat_thickness;};  
+    G4double GetMaterialThickness()  const{return fhThick;}  
     virtual G4VPhysicalVolume* Construct();
     void ConstructPPAC(G4double Pos_PPAC);
     void ConstructSilicon_detector(G4double Pos_Silicon);

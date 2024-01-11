@@ -7,6 +7,8 @@
 #include "G4AnalysisManager.hh"
 #include "G4RunManager.hh"
 #include "run.hh"
+#include "G4UserSteppingAction.hh"
+#include "construction.hh"
 
 class MyEventAction : public G4UserEventAction
 {
@@ -20,12 +22,14 @@ public:
     void AddEdep(G4double edep) { fEdep += edep; }
     void AddEdep1(G4double edep1) { fEdep1 += edep1; }
     void SetPosition(G4ThreeVector p) { fPosition = p; }
+    void Count_thickness(G4double current_thickness)  {thickness_count += current_thickness;}
 
 
 private:
     G4double fEdep;
     G4ThreeVector fPosition;
     G4double fEdep1;
+    G4double thickness_count;
 };
 
 #endif

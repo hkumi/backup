@@ -17,8 +17,14 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
      G4LogicalVolume *fScoringVolume = detectorConstruction->GetScoringVolume();
      G4LogicalVolume *fScoringVolume2 = detectorConstruction->GetScoringVolume1();
 
+     //G4cout << "\n thickness of this material "<< detectorConstruction->GetMaterialThickness() << G4endl;
+     G4double current_thickness = detectorConstruction->GetMaterialThickness();       
+
+
      G4double edep = step->GetTotalEnergyDeposit();
      G4double edep1 = step->GetTotalEnergyDeposit();
+     //G4cout << current_thickness << G4endl;
+    // fEventAction->Count_thickness(current_thickness);
 
     	// If it's the first step in the volume, save the position. 
      if (step->IsFirstStepInVolume()) {
@@ -27,6 +33,7 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
 
      if (volume == fScoringVolume){
         fEventAction->AddEdep(edep);
+
      }
 
      if (volume == fScoringVolume2){
