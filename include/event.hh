@@ -30,6 +30,7 @@ private:
     G4ThreeVector fPosition;
     G4double fEdep1;
     G4double thickness_count;
+    std::vector<G4int> theCollID;
 };
 
 #endif
