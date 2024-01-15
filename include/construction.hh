@@ -29,11 +29,19 @@ public:
     DetectorConstruction();
    ~DetectorConstruction();
 
-    G4LogicalVolume *GetScoringVolume() const {return fScoringVolume;}
+    G4LogicalVolume *GetScoringVolume() const {return fScoringVolume_1;}
+    G4LogicalVolume *GetScoringVolume_2() const {return fScoringVolume_2;}
+    G4LogicalVolume *GetScoringVolume_3() const {return fScoringVolume_3;}
+    G4LogicalVolume *GetScoringVolume_4() const {return fScoringVolume_4;}
+    G4LogicalVolume *GetScoringVolume_5() const {return fScoringVolume_5;}
     G4LogicalVolume *GetScoringVolume1() const {return fScoringVolume2;}
     G4double GetMaterialThickness()  const{return fhThick;}  
     virtual G4VPhysicalVolume* Construct();
-    void ConstructPPAC(G4double Pos_PPAC);
+    void ConstructOPPAC_1(G4double Pos_PPAC_1);
+    void ConstructOPPAC_2(G4double Pos_PPAC_2);
+    void ConstructOPPAC_3(G4double Pos_PPAC_3);
+    void ConstructOPPAC_4(G4double Pos_PPAC_4);
+    void ConstructOPPAC_5(G4double Pos_PPAC_5);
     void ConstructSilicon_detector(G4double Pos_Silicon);
     void CreateAndPlaceShield(G4double thickness, G4double size, G4double position, G4LogicalVolume* motherVolume) ;
   
@@ -46,8 +54,8 @@ private:
      G4LogicalVolume   *fLBox,*ffLShield, *FoLShield,*fLShield,*TLShield,*fLScore, *logicScintillator;
      G4LogicalVolume   *fLShield1;
      G4LogicalVolume*   logicDetector;
-     G4LogicalVolume*   fScoringVolume;
-     G4LogicalVolume*   fScoringVolume2;
+     G4LogicalVolume   *fScoringVolume_1,*fScoringVolume_2,*fScoringVolume_3,*fScoringVolume_4;
+     G4LogicalVolume   *fScoringVolume2,*fScoringVolume_5;
      G4double       mat_thickness;
      
      G4VPhysicalVolume *fPBox, *physScintillator;

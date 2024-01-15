@@ -16,8 +16,14 @@ MyRunAction::MyRunAction()
 
     man->CreateNtuple("Scoring", "Scoring");
     man->CreateNtupleDColumn("Edep");
-    man->CreateNtupleDColumn("E_silicon");
+    man->CreateNtupleDColumn("Edep_2");
+    man->CreateNtupleDColumn("Edep_3");
+    man->CreateNtupleDColumn("Edep_4");
+    man->CreateNtupleDColumn("Edep_5");
     man->FinishNtuple(1);
+    man->CreateNtuple("scoring1","scoring1");
+    man->CreateNtupleDColumn("E_silicon");
+    man->FinishNtuple(2);
 
 
 }
