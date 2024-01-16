@@ -489,39 +489,39 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   // shielding
 /////...........first stack layer ...........................................................................
 
-  fhThick = 0.1 * mm;
+  fhThick = 0.20 * mm;
   G4double fhSize = 60 * mm;
   G4double fhPos = 0 * mm;
 
   CreateAndPlaceShield(fhThick, fhSize, fhPos, fLBox);
   ConstructOPPAC_1(5*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 8.15*mm, fLBox);
-  ConstructOPPAC_2(13.15*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 8.25*mm, fLBox);
+  ConstructOPPAC_2(13.25*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 13.2*mm, fLBox);
-  ConstructOPPAC_3(18.2*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 16.30*mm, fLBox);
+  ConstructOPPAC_3(21.30*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 21.25*mm, fLBox);
-  ConstructOPPAC_4(26.25*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 24.35*mm, fLBox);
+  ConstructOPPAC_4(29.35*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 29.3*mm, fLBox);
-  ConstructOPPAC_5(34.3*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 32.40*mm, fLBox);
+  ConstructOPPAC_5(37.40*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 37.35*mm, fLBox);
-  ConstructOPPAC_6(42.35*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 40.45*mm, fLBox);
+  ConstructOPPAC_6(45.45*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 45.4*mm, fLBox);
-  ConstructOPPAC_7(50.4*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 48.50*mm, fLBox);
+  ConstructOPPAC_7(53.50*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 53.45*mm, fLBox);
-  ConstructOPPAC_8(58.45*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 56.55*mm, fLBox);
+  ConstructOPPAC_8(61.55*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 61.5*mm, fLBox);
-  ConstructOPPAC_9(66.5*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 64.60*mm, fLBox);
+  ConstructOPPAC_9(69.60*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 69.55*mm, fLBox);
-  ConstructOPPAC_10(74.55*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 72.65*mm, fLBox);
+  ConstructOPPAC_10(77.65*mm);
 
 
 
