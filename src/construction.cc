@@ -309,6 +309,122 @@ void DetectorConstruction::ConstructOPPAC_5(G4double Pos_PPAC_5)
   fScoringVolume_5 = fLScore_5;
 }
 
+void DetectorConstruction::ConstructOPPAC_6(G4double Pos_PPAC_6)
+{
+
+// scores
+  G4double ScThick_6 =  3.0*mm;
+
+  auto sScore_6 = new G4Box("sScore_6",
+                            50*mm,50*mm,ScThick_6);
+
+  auto fLScore_6 = new G4LogicalVolume(sScore_6,
+                                       CF4,
+                                      "fLScore_6");
+
+  auto fPScore_r_6 = new G4PVPlacement(0,
+                                    G4ThreeVector(0.*mm,0.*mm,Pos_PPAC_6),
+                                    fLScore_6,
+                                    "fPScore_r_6",
+                                    fLBox,
+                                    false,
+                                    0,true);
+  fScoringVolume_6 = fLScore_6;
+}
+
+void DetectorConstruction::ConstructOPPAC_7(G4double Pos_PPAC_7)
+{
+
+// scores
+  G4double ScThick_7 =  3.0*mm;
+
+  auto sScore_7 = new G4Box("sScore_7",
+                            50*mm,50*mm,ScThick_7);
+
+  auto fLScore_7 = new G4LogicalVolume(sScore_7,
+                                       CF4,
+                                      "fLScore_7");
+
+  auto fPScore_r_7 = new G4PVPlacement(0,
+                                    G4ThreeVector(0.*mm,0.*mm,Pos_PPAC_7),
+                                    fLScore_7,
+                                    "fPScore_r_7",
+                                    fLBox,
+                                    false,
+                                    0,true);
+  fScoringVolume_7 = fLScore_7;
+}
+
+void DetectorConstruction::ConstructOPPAC_8(G4double Pos_PPAC_8)
+{
+
+// scores
+  G4double ScThick_8 =  3.0*mm;
+
+  auto sScore_8 = new G4Box("sScore_8",
+                            50*mm,50*mm,ScThick_8);
+
+  auto fLScore_8 = new G4LogicalVolume(sScore_8,
+                                       CF4,
+                                      "fLScore_8");
+
+  auto fPScore_r_8 = new G4PVPlacement(0,
+                                    G4ThreeVector(0.*mm,0.*mm,Pos_PPAC_8),
+                                    fLScore_8,
+                                    "fPScore_r_8",
+                                    fLBox,
+                                    false,
+                                    0,true);
+  fScoringVolume_8 = fLScore_8;
+}
+
+void DetectorConstruction::ConstructOPPAC_9(G4double Pos_PPAC_9)
+{
+
+// scores
+  G4double ScThick_9 =  3.0*mm;
+
+  auto sScore_9 = new G4Box("sScore_9",
+                            50*mm,50*mm,ScThick_9);
+
+  auto fLScore_9 = new G4LogicalVolume(sScore_9,
+                                       CF4,
+                                      "fLScore_9");
+
+  auto fPScore_r_9 = new G4PVPlacement(0,
+                                    G4ThreeVector(0.*mm,0.*mm,Pos_PPAC_9),
+                                    fLScore_9,
+                                    "fPScore_r_9",
+                                    fLBox,
+                                    false,
+                                    0,true);
+  fScoringVolume_9 = fLScore_9;
+
+}
+
+void DetectorConstruction::ConstructOPPAC_10(G4double Pos_PPAC_10)
+{
+
+// scores
+  G4double ScThick_10 =  3.0*mm;
+
+  auto sScore_10 = new G4Box("sScore_10",
+                            50*mm,50*mm,ScThick_10);
+
+  auto fLScore_10 = new G4LogicalVolume(sScore_10,
+                                       CF4,
+                                      "fLScore_10");
+
+  auto fPScore_r_10 = new G4PVPlacement(0,
+                                    G4ThreeVector(0.*mm,0.*mm,Pos_PPAC_10),
+                                    fLScore_10,
+                                    "fPScore_r_10",
+                                    fLBox,
+                                    false,
+                                    0,true);
+  fScoringVolume_10 = fLScore_10;
+}
+
 
 
 void DetectorConstruction::ConstructSilicon_detector(G4double Pos_Silicon)
@@ -378,34 +494,34 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   G4double fhPos = 0 * mm;
 
   CreateAndPlaceShield(fhThick, fhSize, fhPos, fLBox);
-  ConstructOPPAC_1(0.125*mm);
+  ConstructOPPAC_1(5*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 3.15*mm, fLBox);
-  ConstructOPPAC_2(3.275*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 8.15*mm, fLBox);
+  ConstructOPPAC_2(13.15*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 6.3*mm, fLBox);
-  ConstructOPPAC_3(6.425*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 13.2*mm, fLBox);
+  ConstructOPPAC_3(18.2*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 9.45*mm, fLBox);
-  ConstructOPPAC_4(9.575*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 21.25*mm, fLBox);
+  ConstructOPPAC_4(26.25*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 12.6*mm, fLBox);
-  ConstructOPPAC_5(12.726*mm);
-/*
-  CreateAndPlaceShield(fhThick, fhSize, 15.75*mm, fLBox);
-  ConstructOPPAC_1(15.875*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 29.3*mm, fLBox);
+  ConstructOPPAC_5(34.3*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 18.9*mm, fLBox);
-  ConstructOPPAC_1(19.025*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 37.35*mm, fLBox);
+  ConstructOPPAC_6(42.35*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 22.05*mm, fLBox);
-  ConstructOPPAC_1(22.175*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 45.4*mm, fLBox);
+  ConstructOPPAC_7(50.4*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 25.2*mm, fLBox);
-  ConstructOPPAC_1(25.325*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 53.45*mm, fLBox);
+  ConstructOPPAC_8(58.45*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 28.35*mm, fLBox);
-  ConstructOPPAC_1(28.475*mm);*/
+  CreateAndPlaceShield(fhThick, fhSize, 61.5*mm, fLBox);
+  ConstructOPPAC_9(66.5*mm);
+
+  CreateAndPlaceShield(fhThick, fhSize, 69.55*mm, fLBox);
+  ConstructOPPAC_10(74.55*mm);
 
 
 

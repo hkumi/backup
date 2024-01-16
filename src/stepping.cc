@@ -19,6 +19,12 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
      G4LogicalVolume *fScoringVolume_3 = detectorConstruction->GetScoringVolume_3();
      G4LogicalVolume *fScoringVolume_4 = detectorConstruction->GetScoringVolume_4();
      G4LogicalVolume *fScoringVolume_5 = detectorConstruction->GetScoringVolume_5();
+     G4LogicalVolume *fScoringVolume_6 = detectorConstruction->GetScoringVolume_6();
+     G4LogicalVolume *fScoringVolume_7 = detectorConstruction->GetScoringVolume_7();
+     G4LogicalVolume *fScoringVolume_8 = detectorConstruction->GetScoringVolume_8();
+     G4LogicalVolume *fScoringVolume_9 = detectorConstruction->GetScoringVolume_9();
+     G4LogicalVolume *fScoringVolume_10 = detectorConstruction->GetScoringVolume_10();
+
      G4LogicalVolume *fScoringVolume2 = detectorConstruction->GetScoringVolume1();
 
      //G4cout << "\n thickness of this material "<< detectorConstruction->GetMaterialThickness() << G4endl;
@@ -31,6 +37,12 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
      G4double edep_3 = step->GetTotalEnergyDeposit();
      G4double edep_4 = step->GetTotalEnergyDeposit();
      G4double edep_5 = step->GetTotalEnergyDeposit();
+     G4double edep_6 = step->GetTotalEnergyDeposit();
+     G4double edep_7 = step->GetTotalEnergyDeposit();
+     G4double edep_8 = step->GetTotalEnergyDeposit();
+     G4double edep_9 = step->GetTotalEnergyDeposit();
+     G4double edep_10 = step->GetTotalEnergyDeposit();
+
      //G4cout << current_thickness << G4endl;
     // fEventAction->Count_thickness(current_thickness);
 
@@ -57,6 +69,26 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
      }
      if (volume == fScoringVolume_5){
         fEventAction->AddEdep_5(edep_5);
+
+     }
+     if (volume == fScoringVolume_6){
+        fEventAction->AddEdep_6(edep_6);
+
+     }
+     if (volume == fScoringVolume_7){
+        fEventAction->AddEdep_7(edep_7);
+
+     }
+     if (volume == fScoringVolume_8){
+        fEventAction->AddEdep_8(edep_8);
+
+     }
+     if (volume == fScoringVolume_9){
+        fEventAction->AddEdep_9(edep_9);
+
+     }
+     if (volume == fScoringVolume_10){
+        fEventAction->AddEdep_10(edep_10);
 
      }
 
