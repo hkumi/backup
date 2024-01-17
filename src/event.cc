@@ -60,7 +60,8 @@ void MyEventAction::EndOfEventAction(const G4Event*)
           man->FillNtupleDColumn(0, 1, fPosition.getX()*cm);
           man->FillNtupleDColumn(0, 2, fPosition.getY()*cm);
           man->FillNtupleDColumn(0, 3, fPosition.getZ()*cm);
-       //man->FillNtupleDColumn(0, 4, time);
+          man->FillH2(0, fPosition.getX()*cm, fPosition.getY()*cm);
+  
           man->AddNtupleRow(0);
           theCollID.push_back(evt);
           G4int Ncol = theCollID.size();

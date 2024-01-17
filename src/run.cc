@@ -62,6 +62,9 @@ MyRunAction::MyRunAction()
     man->CreateNtupleDColumn("E_silicon");
     man->FinishNtuple(11);
 
+    man->CreateH2("xy ","xy", 100, -400, 100, 100, -700., 100.0);
+
+
 
 }
 
