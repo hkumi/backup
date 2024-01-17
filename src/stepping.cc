@@ -29,8 +29,10 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
 
      //G4cout << "\n thickness of this material "<< detectorConstruction->GetMaterialThickness() << G4endl;
      G4double current_thickness = detectorConstruction->GetMaterialThickness();       
-
-
+     
+     //G4Track* theTrack = step->GetTrack();
+     //G4int stepNumber = theTrack->GetCurrentStepNumber();
+     //G4cout << "the step number:" << stepNumber; 
      G4double edep = step->GetTotalEnergyDeposit();
      G4double edep1 = step->GetTotalEnergyDeposit();
      G4double edep_2 = step->GetTotalEnergyDeposit();

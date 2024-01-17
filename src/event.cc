@@ -52,19 +52,19 @@ void MyEventAction::EndOfEventAction(const G4Event*)
        G4AnalysisManager *man = G4AnalysisManager::Instance();
 
        if (fEdep > 0.0) {
-          G4cout << "Number of events: " << evt << G4endl;
-          G4cout << "Energy deposition: " << fEdep*MeV << G4endl;
+         // G4cout << "Number of events: " << evt << G4endl;
+          //G4cout << "Energy deposition: " << fEdep*MeV << G4endl;
           man->FillNtupleDColumn(1, 0, fEdep*MeV);
           man->AddNtupleRow(1);
           man->FillNtupleDColumn(0, 0, evt);
-          //man->FillNtupleDColumn(0, 1, fPosition.getX()*cm);
-          //man->FillNtupleDColumn(0, 2, fPosition.getY()*cm);
-          //man->FillNtupleDColumn(0, 3, fPosition.getZ()*cm);
+          man->FillNtupleDColumn(0, 1, fPosition.getX()*cm);
+          man->FillNtupleDColumn(0, 2, fPosition.getY()*cm);
+          man->FillNtupleDColumn(0, 3, fPosition.getZ()*cm);
        //man->FillNtupleDColumn(0, 4, time);
           man->AddNtupleRow(0);
           theCollID.push_back(evt);
           G4int Ncol = theCollID.size();
-          G4cout << "total number events OPPAC_1:"<< Ncol << G4endl;
+          //G4cout << "total number events OPPAC_1:"<< Ncol << G4endl;
 
 
        }

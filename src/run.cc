@@ -8,7 +8,11 @@ MyRunAction::MyRunAction()
     man->SetVerboseLevel( 1 );
     man->CreateNtuple("Photons", "Photons");
     man->CreateNtupleDColumn("TCount");
+    man->CreateNtupleDColumn("fX");
+    man->CreateNtupleDColumn("fY");
+    man->CreateNtupleDColumn("fZ");
    // man->CreateNtupleDColumn("fT");
+   
 
     man->FinishNtuple(0);
 
