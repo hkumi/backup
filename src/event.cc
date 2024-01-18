@@ -72,24 +72,36 @@ void MyEventAction::EndOfEventAction(const G4Event*)
 
        if (fEdep_2 > 0.0){
           man->FillNtupleDColumn(2,0,fEdep_2*MeV);
+          man->FillNtupleDColumn(2, 1, fPosition.getX()*cm);
+          man->FillNtupleDColumn(2, 2, fPosition.getY()*cm);
+          man->FillH2(1, fPosition.getX()*cm, fPosition.getY()*cm);
           man->AddNtupleRow(2);
 
        }
 
        if (fEdep_3 > 0.0){
           man->FillNtupleDColumn(3,0,fEdep_3*MeV);
+          man->FillNtupleDColumn(3, 1, fPosition.getX()*cm);
+          man->FillNtupleDColumn(3, 2, fPosition.getY()*cm);
+          man->FillH2(2, fPosition.getX()*cm, fPosition.getY()*cm);
           man->AddNtupleRow(3);
 
        }
 
        if (fEdep_4 > 0.0){
           man->FillNtupleDColumn(4,0,fEdep_4*MeV);
+          man->FillNtupleDColumn(4, 1, fPosition.getX()*cm);
+          man->FillNtupleDColumn(4, 2, fPosition.getY()*cm);
+          man->FillH2(3, fPosition.getX()*cm, fPosition.getY()*cm);
           man->AddNtupleRow(4);
 
        }
 
        if (fEdep_5 > 0.0){
           man->FillNtupleDColumn(5,0,fEdep_5*MeV);
+          man->FillNtupleDColumn(5, 1, fPosition.getX()*cm);
+          man->FillNtupleDColumn(5, 2, fPosition.getY()*cm);
+          man->FillH2(4, fPosition.getX()*cm, fPosition.getY()*cm);
           man->AddNtupleRow(5);
 
 
@@ -97,12 +109,18 @@ void MyEventAction::EndOfEventAction(const G4Event*)
 
        if (fEdep_6 > 0.0){
           man->FillNtupleDColumn(6,0,fEdep_6*MeV);
+          man->FillNtupleDColumn(6, 1, fPosition.getX()*cm);
+          man->FillNtupleDColumn(6, 2, fPosition.getY()*cm);
+          man->FillH2(5, fPosition.getX()*cm, fPosition.getY()*cm);
           man->AddNtupleRow(6);
 
        }
 
        if (fEdep_7 > 0.0){
           man->FillNtupleDColumn(7,0,fEdep_7*MeV);
+          man->FillNtupleDColumn(7, 1, fPosition.getX()*cm);
+          man->FillNtupleDColumn(7, 2, fPosition.getY()*cm);
+          man->FillH2(6, fPosition.getX()*cm, fPosition.getY()*cm);
           man->AddNtupleRow(7);
 
 
@@ -110,6 +128,9 @@ void MyEventAction::EndOfEventAction(const G4Event*)
 
        if (fEdep_8 > 0.0){
           man->FillNtupleDColumn(8,0,fEdep_8*MeV);
+          man->FillNtupleDColumn(8, 1, fPosition.getX()*cm);
+          man->FillNtupleDColumn(8, 2, fPosition.getY()*cm);
+          man->FillH2(7, fPosition.getX()*cm, fPosition.getY()*cm);
           man->AddNtupleRow(8);
 
 
@@ -117,6 +138,9 @@ void MyEventAction::EndOfEventAction(const G4Event*)
 
        if (fEdep_9 > 0.0){
           man->FillNtupleDColumn(9,0,fEdep_9*MeV);
+          man->FillNtupleDColumn(9, 1, fPosition.getX()*cm);
+          man->FillNtupleDColumn(9, 2, fPosition.getY()*cm);
+          man->FillH2(8, fPosition.getX()*cm, fPosition.getY()*cm);
           man->AddNtupleRow(9);
 
 
@@ -124,6 +148,9 @@ void MyEventAction::EndOfEventAction(const G4Event*)
 
        if (fEdep_10 > 0.0){
           man->FillNtupleDColumn(10,0,fEdep_10*MeV);
+          man->FillNtupleDColumn(10, 1, fPosition.getX()*cm);
+          man->FillNtupleDColumn(10, 2, fPosition.getY()*cm);
+          man->FillH2(9, fPosition.getX()*cm, fPosition.getY()*cm);
           man->AddNtupleRow(10);
 
        }
