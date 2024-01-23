@@ -1,6 +1,4 @@
-
 #include "physics.hh"
-
 #include "G4SystemOfUnits.hh"
 #include "G4UnitsTable.hh"
 
@@ -23,14 +21,12 @@ PhysicsList::PhysicsList()
 {
   G4int verb = 1;
   SetVerboseLevel(verb);
-  
-  
+
   //add new units
   //
   new G4UnitDefinition( "millielectronVolt", "meV", "Energy", 1.e-3*eV);   
   new G4UnitDefinition( "mm2/g",  "mm2/g", "Surface/Mass", mm2/g);
   new G4UnitDefinition( "um2/mg", "um2/mg","Surface/Mass", um*um/mg);  
-  
   // mandatory for G4NuclideTable
   //
   const G4double meanLife = 1*nanosecond, halfLife = meanLife*std::log(2);

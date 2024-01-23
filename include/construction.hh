@@ -79,7 +79,8 @@ private:
      G4Material*        fMaterial;     
      G4Material *Air, *Aerogel,  *polyethylene, *NaI, *CF4 ;
      G4Material *siliconMaterial;
-     G4Element  *Na, *I, *C,*N,*O,*F;     
+     G4Element  *Na, *I, *C,*N,*O,*F;
+     G4Material *Vacc;     
 
      void DefineMaterials();
      virtual void ConstructSDandField();

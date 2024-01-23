@@ -48,7 +48,7 @@ void DetectorConstruction::DefineMaterials()
   H2O->AddElement(O, natoms=1);
   H2O->GetIonisation()->SetMeanExcitationEnergy(78.0*eV);
   // vacuum
-  G4Material *Vacc = new G4Material("Galactic", z=1, a=1.01*g/mole, Vdens, kStateGas, Vtemp, Vpres);
+  Vacc = new G4Material("Galactic", z=1, a=1.01*g/mole, Vdens, kStateGas, Vtemp, Vpres);
   // air
   G4Element* N = new G4Element("Nitrogen", "N", 7., 14.01*g/mole);
   Air = new G4Material("air", 1.290*mg/cm3, ncomponents=2, kStateGas, 293*kelvin, 1*atmosphere);
@@ -177,6 +177,10 @@ void DetectorConstruction::DefineMaterials()
   mptWorld->AddProperty("RINDEX", energy, rindexWorld, 2);
   Air->SetMaterialPropertiesTable(mptWorld);
 
+ //.....................teflon............................
+
+//......................end of teflon.....................
+
   //............................End of optical detector material........................
 
 //...............creating the materials for the scintillator..............................
@@ -187,7 +191,7 @@ void DetectorConstruction::DefineMaterials()
   NaI->AddElement(I, 1);
 
 
-     
+
 //....................End of scintillator material........................................
 }
 
@@ -197,7 +201,7 @@ void DetectorConstruction::ConstructOPPAC_1(G4double Pos_PPAC_1)
 {
 
 // scores
-  G4double ScThick_1 =  3.0*mm;
+  G4double ScThick_1 =  0.1*mm;
 
   auto sScore_1 = new G4Box("sScore_1",
                             50*mm,50*mm,ScThick_1);
@@ -220,7 +224,7 @@ void DetectorConstruction::ConstructOPPAC_2(G4double Pos_PPAC_2)
 {
 
 // scores
-  G4double ScThick_2 =  3.0*mm;
+  G4double ScThick_2 =  3*mm;
 
   auto sScore_2 = new G4Box("sScore_2",
                             50*mm,50*mm,ScThick_2);
@@ -243,7 +247,7 @@ void DetectorConstruction::ConstructOPPAC_3(G4double Pos_PPAC_3)
 {
 
 // scores
-  G4double ScThick_3 =  3.0*mm;
+  G4double ScThick_3 =  3*mm;
 
   auto sScore_3 = new G4Box("sScore_3",
                             50*mm,50*mm,ScThick_3);
@@ -475,7 +479,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
                    fBoxSize/2,fBoxSize/2,fBoxSize/2);   //its dimensions
 
   fLBox = new G4LogicalVolume(sBox,                     //its shape
-                             Air,                      //its material
+                             Vacc,                      //its material
                              "World");                  //its name
 
   fPBox = new G4PVPlacement(0,                          //no rotation
@@ -489,40 +493,40 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   // shielding
 /////...........first stack layer ...........................................................................
 
-  fhThick = 0.22 * mm;
-  G4double fhSize = 60 * mm;
-  G4double fhPos = 0 * mm;
+  fhThick = 0.30 * mm;
+  G4double fhSize = 50 * mm;
+  G4double fhPos = 3.30 * mm;
 
-  CreateAndPlaceShield(fhThick, fhSize, fhPos, fLBox);
-  ConstructOPPAC_1(5*mm);
+  //CreateAndPlaceShield(fhThick, fhSize, -3.30*mm, fLBox);
+  ConstructOPPAC_1(0*mm);
+/*
+  CreateAndPlaceShield(fhThick, fhSize, fhPos*mm, fLBox);
+  ConstructOPPAC_2(6.60*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 8.27*mm, fLBox);
-  ConstructOPPAC_2(13.27*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 9.30*mm, fLBox);
+  ConstructOPPAC_3(12.60*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 16.32*mm, fLBox);
-  ConstructOPPAC_3(21.32*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 15.30*mm, fLBox);
+  ConstructOPPAC_4(18.60*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 24.37*mm, fLBox);
-  ConstructOPPAC_4(29.37*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 21.30*mm, fLBox);
+  ConstructOPPAC_5(24.60*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 32.42*mm, fLBox);
-  ConstructOPPAC_5(37.42*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 27.30*mm, fLBox);
+  ConstructOPPAC_6(30.60*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 40.47*mm, fLBox);
-  ConstructOPPAC_6(45.47*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 33.30*mm, fLBox);
+  ConstructOPPAC_7(36.60*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 48.52*mm, fLBox);
-  ConstructOPPAC_7(53.52*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 39.30*mm, fLBox);
+  ConstructOPPAC_8(42.60*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 56.57*mm, fLBox);
-  ConstructOPPAC_8(61.57*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 45.30*mm, fLBox);
+  ConstructOPPAC_9(48.60*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 64.62*mm, fLBox);
-  ConstructOPPAC_9(69.62*mm);
-
-  CreateAndPlaceShield(fhThick, fhSize, 72.67*mm, fLBox);
-  ConstructOPPAC_10(77.67*mm);
-
+  CreateAndPlaceShield(fhThick, fhSize, 51.30*mm, fLBox);
+  ConstructOPPAC_10(54.60*mm);
+*/
 
 
 //................................end of first stack...............................................................

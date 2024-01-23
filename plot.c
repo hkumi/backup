@@ -10,20 +10,20 @@ void plot() {
 
     // Data
      const int n = 11;
-     //double thickness[n] = {0.10,0.12,0.14,0.16,0.18,0.20,0.22,0.24,0.26,0.28,0.30};
-     //double evnt[n] = {497,493,528,547,545,530,501,545,489,505,483};
      double thickness[n] = {0.10,0.12,0.14,0.16,0.18,0.20,0.22,0.24,0.26,0.28,0.30};
-     double evnt[n] = {4930,4904,5077,4819,4901,4925,4775,4814,4873,4786,4886};
+     //double evnt[n] = {540,534,535,483,547,539,563,556,543,532,538};
+     //double thickness[n] = {0.10,0.12,0.14,0.16,0.18,0.20,0.22,0.24,0.26,0.28,0.30};
+     double evnt[n] = {4654,4950,4920,4999,5015,5083,4922,5019,5184,4677,4988};
      double thickness_1[n] = {0.10,0.12,0.14,0.16,0.18,0.20,0.22,0.24,0.26,0.28,0.30};
 
-     double eff[n] = {0.004930,0.004904,0.005077,0.004819,0.004901,0.004925,0.004775,0.004814,0.004873,0.004786,0.004886};
+     double eff[n] = {0.004654,0.004950,0.004920,0.004999,0.005015,0.005083,0.004922,0.005019,0.005184,0.004677,0.004988};
      Double_t ex_1[n] = {.0000,.0000,.0000,.0000,.0000,.0000,.0000,.0000,.0000,.0000,0.0000};
      Double_t ey_1[n] = {.000001,.000001,.000001,.000001,.000001,.000001,.000001,.000001,.000001,.000001,.000001};
 
 
 
      Double_t ex[n] = {.00,.0,.00,.00,.00,.00,.00,.00,.00,.00,0.00};
-     Double_t ey[n] = {.01,.01,.01,.01,.01,.01,.01,.01,.01,.01,.01};
+     Double_t ey[n] = {.01719,.01914,.02457,.01418,.01918,.01969,.01715,.01805,.01505,.02353,.01505};
 
     // Create a TGraph object
      TGraphErrors *graph = new TGraphErrors(n, thickness, evnt,ex,ey);
@@ -31,13 +31,13 @@ void plot() {
 
      // Set the graph title and axis labels
      graph->SetTitle("Graph of evnt vs thickness");
-     graph->GetXaxis()->SetTitle("thickness");
+     graph->GetXaxis()->SetTitle("thickness[mm]");
      graph->GetYaxis()->SetTitle("evnt");
 
     // set graph for efficiency
-     graph_1->SetTitle("Efficiency vs thickness");
-     graph_1->GetXaxis()->SetTitle("thickness");
-     graph_1->GetYaxis()->SetTitle("efficiency");
+     //graph_1->SetTitle("Efficiency vs thickness");
+     //graph_1->GetXaxis()->SetTitle("thickness[mm]");
+     //graph_1->GetYaxis()->SetTitle("efficiency");
 
      // Draw the graph
      graph->Draw("apl*");  // "AP" option specifies drawing with markers (points) and connecting with lines
@@ -46,14 +46,11 @@ void plot() {
      // Draw grap two. 
 
       // Draw the graph
-     graph_1->Draw("apl*");  // "AP" option specifies drawing with markers (points) and connecting with lines
-     graph_1->SetMarkerColor(kBlue);
-     graph_1->SetMarkerSize(0.5);
+     //graph_1->Draw("apl*");  // "AP" option specifies drawing with markers (points) and connecting with lines
+     //graph_1->SetMarkerColor(kBlue);
+     //graph_1->SetMarkerSize(0.5);
 
-     canvas->Update();
-     TPaveStats *st = (TPaveStats*)graph->FindObject("stats");
- 
-     canvas->Modified();
+     
      canvas_1->Draw();
      canvas->Draw();
 }

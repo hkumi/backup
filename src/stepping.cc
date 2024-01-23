@@ -10,7 +10,9 @@ MySteppingAction::~MySteppingAction()
 
 void MySteppingAction::UserSteppingAction(const G4Step *step)
 {
-//  if (step->GetTrack()->GetDefinition()->GetParticleName() == "proton") {    
+//  if (step->GetTrack()->GetDefinition()->GetParticleName() == "proton") {
+     G4AnalysisManager *man = G4AnalysisManager::Instance();
+
      const DetectorConstruction *detectorConstruction = static_cast<const DetectorConstruction*> (G4RunManager::GetRunManager()->GetUserDetectorConstruction());
      G4LogicalVolume *volume = step->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume();
 
@@ -28,11 +30,19 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
      G4LogicalVolume *fScoringVolume2 = detectorConstruction->GetScoringVolume1();
 
      //G4cout << "\n thickness of this material "<< detectorConstruction->GetMaterialThickness() << G4endl;
-     G4double current_thickness = detectorConstruction->GetMaterialThickness();       
-     
-     //G4Track* theTrack = step->GetTrack();
-     //G4int stepNumber = theTrack->GetCurrentStepNumber();
-     //G4cout << "the step number:" << stepNumber; 
+     G4double current_thickness = detectorConstruction->GetMaterialThickness();
+
+     G4Track* track = step->GetTrack();
+     //track->SetTrackStatus(fStopAndKill);
+     G4int stepNumber = track->GetCurrentStepNumber();
+  //   G4cout << "the step number:" << stepNumber << G4endl; 
+     if ( step->GetTrack()->GetDefinition()->GetParticleName() == "proton"){
+        G4double energy = step->GetPreStepPoint()->GetKineticEnergy();
+        man->FillNtupleDColumn(12, 0, energy);
+        man->AddNtupleRow(12);
+	//G4cout << energy << G4endl;
+     }
+
      G4double edep = step->GetTotalEnergyDeposit();
      G4double edep1 = step->GetTotalEnergyDeposit();
      G4double edep_2 = step->GetTotalEnergyDeposit();
@@ -45,12 +55,23 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
      G4double edep_9 = step->GetTotalEnergyDeposit();
      G4double edep_10 = step->GetTotalEnergyDeposit();
 
-     //G4cout << current_thickness << G4endl;
-    // fEventAction->Count_thickness(current_thickness);
+        //G4cout << current_thickness << G4endl;
+        // fEventAction->Count_thickness(current_thickness);
 
     	// If it's the first step in the volume, save the position. 
      if (step->IsFirstStepInVolume()) {
-        fEventAction->SetPosition(step->GetPreStepPoint()->GetPosition());
+    // fEventAction->SetPosition(step->GetPreStepPoint()->GetPosition());
+     //G4AnalysisManager *man = G4AnalysisManager::Instance();
+     G4StepPoint *preStepPoint = step->GetPreStepPoint();
+     G4StepPoint *postStepPoint = step->GetPostStepPoint();
+
+     G4ThreeVector posPhoton = preStepPoint->GetPosition();
+
+     man->FillH2(0, posPhoton[0], posPhoton[1]);
+
+     man->AddNtupleRow(0);
+
+
      }
 
      if (volume == fScoringVolume_1){
@@ -94,8 +115,8 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
 
      }
 
-
      if (volume == fScoringVolume2){
         fEventAction->AddEdep1(edep1);
      }
+
 }

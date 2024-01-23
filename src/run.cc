@@ -7,7 +7,7 @@ MyRunAction::MyRunAction()
     man->SetNtupleMerging(true);
     man->SetVerboseLevel( 1 );
     man->CreateNtuple("Photons", "Photons");
-    man->CreateNtupleDColumn("TCount");
+    man->CreateNtupleDColumn("Energy");
     man->CreateNtupleDColumn("fX1");
     man->CreateNtupleDColumn("fY1");
     man->CreateNtupleDColumn("fZ1");
@@ -88,17 +88,22 @@ MyRunAction::MyRunAction()
     man->CreateNtuple("scoring1","scoring1");
     man->CreateNtupleDColumn("E_silicon");
     man->FinishNtuple(11);
+ 
+    man->CreateNtuple("Energy","Energy");
+    man->CreateNtupleDColumn("Proton_Energy");
+    man->FinishNtuple(12);
 
-    man->CreateH2("xy1 ","xy1", 1000, -2, 2, 1000, -2., 2.0);
-    man->CreateH2("xy2 ","xy2", 1000, -2, 2, 1000, -2., 2.0);
-    man->CreateH2("xy3 ","xy3", 1000, -2, 2, 1000, -2., 2.0);
-    man->CreateH2("xy4 ","xy4", 1000, -2, 2, 1000, -2., 2.0);
-    man->CreateH2("xy5 ","xy5", 1000, -2, 2, 1000, -2., 2.0);
-    man->CreateH2("xy6 ","xy6", 1000, -2, 2, 1000, -2., 2.0);
-    man->CreateH2("xy7 ","xy7", 1000, -2, 2, 1000, -2., 2.0);
-    man->CreateH2("xy8 ","xy8", 1000, -2, 2, 1000, -2., 2.0);
-    man->CreateH2("xy9 ","xy9", 1000, -2, 2, 1000, -2., 2.0);
-    man->CreateH2("xy10 ","xy10", 1000, -2, 2, 1000, -2., 2.0);
+
+    man->CreateH2("xy1 ","xy1", 100, -2, 2, 100, -2., 2.0);
+    man->CreateH2("xy2 ","xy2", 100, -2, 2, 100, -2., 2.0);
+    man->CreateH2("xy3 ","xy3", 100, -2, 2, 100, -2., 2.0);
+    man->CreateH2("xy4 ","xy4", 100, -2, 2, 100, -2., 2.0);
+    man->CreateH2("xy5 ","xy5", 100, -2, 2, 100, -2., 2.0);
+    man->CreateH2("xy6 ","xy6", 100, -2, 2, 100, -2., 2.0);
+    man->CreateH2("xy7 ","xy7", 100, -2, 2, 100, -2., 2.0);
+    man->CreateH2("xy8 ","xy8", 100, -2, 2, 100, -2., 2.0);
+    man->CreateH2("xy9 ","xy9", 100, -2, 2, 100, -2., 2.0);
+    man->CreateH2("xy10 ","xy10", 100, -2, 2, 100, -2., 2.0);
 
 
 
