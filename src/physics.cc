@@ -32,23 +32,23 @@ PhysicsList::PhysicsList()
   const G4double meanLife = 1*nanosecond, halfLife = meanLife*std::log(2);
   G4NuclideTable::GetInstance()->SetThresholdOfHalfLife(halfLife);  
   // Neutron Physics
-  //RegisterPhysics( new NeutronHPphysics("neutronHP"));
+  RegisterPhysics( new NeutronHPphysics("neutronHP"));
   // Optical Physics
 //   RegisterPhysics(new G4EmStandardPhysics());
 
    RegisterPhysics(new G4OpticalPhysics());
 
   // Hadron Elastic scattering
-  RegisterPhysics( new HadronElasticPhysicsHP(verb) );
+  //RegisterPhysics( new HadronElasticPhysicsHP(verb) );
 
-  RegisterPhysics( new G4HadronPhysicsQGSP_BIC_HP(verb));
+  //RegisterPhysics( new G4HadronPhysicsQGSP_BIC_HP(verb));
 
   // Ion Elastic scattering
   //
-  RegisterPhysics( new G4IonElasticPhysics(verb));
+ // RegisterPhysics( new G4IonElasticPhysics(verb));
   
   // Ion Inelastic physics
-  RegisterPhysics( new G4IonPhysicsXS(verb));
+  //RegisterPhysics( new G4IonPhysicsXS(verb));
 
    // EM physics
   //RegisterPhysics(new ElectromagneticPhysics());

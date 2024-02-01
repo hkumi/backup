@@ -94,7 +94,7 @@ MyRunAction::MyRunAction()
     man->FinishNtuple(12);
 
 
-    man->CreateH2("xy1 ","xy1", 100, -2, 2, 100, -2., 2.0);
+    man->CreateH2("xy1 ","xy1", 100, -2, 2, 100, -2, 2.0);
     man->CreateH2("xy2 ","xy2", 100, -2, 2, 100, -2., 2.0);
     man->CreateH2("xy3 ","xy3", 100, -2, 2, 100, -2., 2.0);
     man->CreateH2("xy4 ","xy4", 100, -2, 2, 100, -2., 2.0);
@@ -103,7 +103,19 @@ MyRunAction::MyRunAction()
     man->CreateH2("xy7 ","xy7", 100, -2, 2, 100, -2., 2.0);
     man->CreateH2("xy8 ","xy8", 100, -2, 2, 100, -2., 2.0);
     man->CreateH2("xy9 ","xy9", 100, -2, 2, 100, -2., 2.0);
-    man->CreateH2("xy10 ","xy10", 100, -2, 2, 100, -2., 2.0);
+    man->CreateH2("xy10 ","xy10", 100,-2, 2, 100, -2., 2.0);
+
+    man->CreateH1("z1 ","z1", 100, -2, 8);
+    man->CreateH1("z2 ","z2", 100, -2, 8);
+    man->CreateH1("z3 ","z3", 100, -2, 8);
+    man->CreateH1("z4 ","z4", 100, -2, 8);
+    man->CreateH1("z5 ","z5", 100, -2, 8);
+    man->CreateH1("z6 ","z6", 100, -2, 8);
+    man->CreateH1("z7 ","z7", 100, -2, 8);
+    man->CreateH1("z8 ","z8", 100, -2, 8);
+    man->CreateH1("z9 ","z9", 100, -2, 8);
+    man->CreateH1("z10 ","z10", 100,-2, 8);
+
 
 
 

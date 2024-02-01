@@ -10,7 +10,7 @@ MySteppingAction::~MySteppingAction()
 
 void MySteppingAction::UserSteppingAction(const G4Step *step)
 {
-//  if (step->GetTrack()->GetDefinition()->GetParticleName() == "proton") {
+  if (step->GetTrack()->GetDefinition()->GetParticleName() == "proton" && step->GetPostStepPoint()->GetProcessDefinedStep() != nullptr ) {
      G4AnalysisManager *man = G4AnalysisManager::Instance();
 
      const DetectorConstruction *detectorConstruction = static_cast<const DetectorConstruction*> (G4RunManager::GetRunManager()->GetUserDetectorConstruction());
@@ -33,15 +33,15 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
      G4double current_thickness = detectorConstruction->GetMaterialThickness();
 
      G4Track* track = step->GetTrack();
+     G4double TrackID = step->GetTrack()->GetTrackID();
      //track->SetTrackStatus(fStopAndKill);
      G4int stepNumber = track->GetCurrentStepNumber();
-  //   G4cout << "the step number:" << stepNumber << G4endl; 
-     if ( step->GetTrack()->GetDefinition()->GetParticleName() == "proton"){
-        G4double energy = step->GetPreStepPoint()->GetKineticEnergy();
-        man->FillNtupleDColumn(12, 0, energy);
-        man->AddNtupleRow(12);
-	//G4cout << energy << G4endl;
-     }
+     //G4cout << "the track material:" << TrackID << G4endl; 
+     G4double energy = step->GetPreStepPoint()->GetKineticEnergy();
+//     man->FillNtupleDColumn(12, 0, energy);
+  //   man->AddNtupleRow(12);
+     //G4cout << energy << G4endl;
+     
 
      G4double edep = step->GetTotalEnergyDeposit();
      G4double edep1 = step->GetTotalEnergyDeposit();
@@ -55,68 +55,198 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
      G4double edep_9 = step->GetTotalEnergyDeposit();
      G4double edep_10 = step->GetTotalEnergyDeposit();
 
-        //G4cout << current_thickness << G4endl;
-        // fEventAction->Count_thickness(current_thickness);
+     // If it's the first step in the volume, save the position.
+     G4ThreeVector posPhoton; 
+     G4StepPoint *preStepPoint; 
+     G4StepPoint *postStepPoint ;   
+ 
+     /*if (step->IsFirstStepInVolume()) {
+        fEventAction->SetPosition(step->GetPreStepPoint()->GetPosition()/cm);
+        preStepPoint = step->GetPreStepPoint();
+        //postStepPoint = step->GetPostStepPoint();
 
-    	// If it's the first step in the volume, save the position. 
-     if (step->IsFirstStepInVolume()) {
-    // fEventAction->SetPosition(step->GetPreStepPoint()->GetPosition());
-     //G4AnalysisManager *man = G4AnalysisManager::Instance();
-     G4StepPoint *preStepPoint = step->GetPreStepPoint();
-     G4StepPoint *postStepPoint = step->GetPostStepPoint();
+        posPhoton = preStepPoint->GetPosition()/cm;
 
-     G4ThreeVector posPhoton = preStepPoint->GetPosition();
-
-     man->FillH2(0, posPhoton[0], posPhoton[1]);
-
-     man->AddNtupleRow(0);
-
-
-     }
+     //man->FillH2(0, posPhoton[0], posPhoton[1]);
+     }*/
 
      if (volume == fScoringVolume_1){
         fEventAction->AddEdep(edep);
+        if (step->IsFirstStepInVolume() ){
+           preStepPoint = step->GetPreStepPoint();
+           postStepPoint = step->GetPostStepPoint();
+           G4double ekin_1  = postStepPoint->GetKineticEnergy()/MeV;
+           G4ThreeVector posPhoton1 = postStepPoint->GetPosition()/cm;
+
+           man->FillH2(0, posPhoton1[0], posPhoton1[1]);
+           man->FillH1(0,  posPhoton1[2]);
+           man->FillNtupleDColumn(12, 0, ekin_1);
+           man->AddNtupleRow(12);
+ 
+
+        }
+           //man->FillNtupleDColumn(12, 0, energy);
+           //man->AddNtupleRow(12);
 
      }
      if (volume == fScoringVolume_2){
         fEventAction->AddEdep_2(edep_2);
+        if (step->IsFirstStepInVolume()){
+           preStepPoint = step->GetPreStepPoint();
+           postStepPoint = step->GetPostStepPoint();
+           G4double ekin_2  = postStepPoint->GetKineticEnergy()/MeV;
+           G4ThreeVector posPhoton2 = postStepPoint->GetPosition()/cm;
+
+           man->FillH2(1, posPhoton2[0], posPhoton2[1]);
+           man->FillH1(1, posPhoton2[2]);
+
+
+        }
 
      }
+
      if (volume == fScoringVolume_3){
         fEventAction->AddEdep_3(edep_3);
+        if (step->IsFirstStepInVolume()){
 
+           preStepPoint = step->GetPreStepPoint();
+           postStepPoint = step->GetPostStepPoint();
+           G4double ekin_3  = postStepPoint->GetKineticEnergy()/MeV;
+           G4ThreeVector posPhoton3 = postStepPoint->GetPosition()/cm;
+
+           man->FillH2(2, posPhoton3[0], posPhoton3[1]);
+           man->FillH1(2, posPhoton3[2]);
+
+        }
      }
      if (volume == fScoringVolume_4){
         fEventAction->AddEdep_4(edep_4);
+        if (step->IsFirstStepInVolume()){
 
+           preStepPoint = step->GetPreStepPoint();
+           postStepPoint = step->GetPostStepPoint();
+           G4double ekin_4  = postStepPoint->GetKineticEnergy()/MeV;
+
+
+           G4ThreeVector posPhoton4 = postStepPoint->GetPosition()/cm;
+
+           man->FillH2(3, posPhoton4[0], posPhoton4[1]);
+           man->FillH1(3, posPhoton4[2]);
+
+
+        }
      }
      if (volume == fScoringVolume_5){
         fEventAction->AddEdep_5(edep_5);
+        if (step->IsFirstStepInVolume()){
+
+           preStepPoint = step->GetPreStepPoint();
+           postStepPoint = step->GetPostStepPoint();
+           G4double ekin_5  = postStepPoint->GetKineticEnergy()/MeV;
+
+           G4ThreeVector posPhoton5 = postStepPoint->GetPosition()/cm;
+
+           man->FillH2(4, posPhoton5[0], posPhoton5[1]);
+           man->FillH1(4,  posPhoton5[2]);
+
+
+        }
 
      }
+
      if (volume == fScoringVolume_6){
         fEventAction->AddEdep_6(edep_6);
+        if (step->IsFirstStepInVolume()){
 
+           preStepPoint = step->GetPreStepPoint();
+           postStepPoint = step->GetPostStepPoint();
+           G4double ekin_6  = postStepPoint->GetKineticEnergy()/MeV;
+
+           G4ThreeVector posPhoton6 = postStepPoint->GetPosition()/cm;
+
+           man->FillH2(5, posPhoton6[0], posPhoton6[1]);
+           man->FillH1(5, posPhoton6[2]);
+
+        }
      }
      if (volume == fScoringVolume_7){
         fEventAction->AddEdep_7(edep_7);
+        if (step->IsFirstStepInVolume()){
 
+           preStepPoint = step->GetPreStepPoint();
+           postStepPoint = step->GetPostStepPoint();
+           G4double ekin_7  = postStepPoint->GetKineticEnergy()/MeV;
+
+           G4ThreeVector posPhoton7 = postStepPoint->GetPosition()/cm;
+
+
+           man->FillH2(6, posPhoton7[0], posPhoton7[1]);
+           man->FillH1(6,  posPhoton7[2]);
+
+        }
      }
+
      if (volume == fScoringVolume_8){
         fEventAction->AddEdep_8(edep_8);
+        if (step->IsFirstStepInVolume()){
+
+           preStepPoint = step->GetPreStepPoint();
+           postStepPoint = step->GetPostStepPoint();
+           G4double ekin_8  = postStepPoint->GetKineticEnergy()/MeV;
+
+           G4ThreeVector posPhoton8 = postStepPoint->GetPosition()/cm;
+
+           man->FillH2(7, posPhoton8[0], posPhoton8[1]);
+           man->FillH1(7,  posPhoton8[2]);
+
+
+
+        }
 
      }
      if (volume == fScoringVolume_9){
         fEventAction->AddEdep_9(edep_9);
+        if (step->IsFirstStepInVolume()){
+
+           preStepPoint = step->GetPreStepPoint();
+           postStepPoint = step->GetPostStepPoint();
+           G4double ekin_9  = postStepPoint->GetKineticEnergy()/MeV;
+
+           G4ThreeVector posPhoton9 = postStepPoint->GetPosition()/cm;
+
+
+           man->FillH2(8, posPhoton9[0], posPhoton9[1]);
+           man->FillH1(8, posPhoton9[2]);
+
+
+        }
 
      }
      if (volume == fScoringVolume_10){
         fEventAction->AddEdep_10(edep_10);
+        if (step->IsFirstStepInVolume()){
 
+           preStepPoint = step->GetPreStepPoint();
+           postStepPoint = step->GetPostStepPoint();
+           G4double ekin_10  = postStepPoint->GetKineticEnergy()/MeV;
+
+           G4ThreeVector posPhoton10 = postStepPoint->GetPosition()/cm;
+
+           man->FillH2(9, posPhoton10[0], posPhoton10[1]);
+           man->FillH1(9, posPhoton10[2]);
+ 
+
+        }
      }
 
      if (volume == fScoringVolume2){
         fEventAction->AddEdep1(edep1);
      }
+
+  }
+  //else
+  //{
+    //step->GetTrack()->SetTrackStatus(fStopAndKill);
+  //}
 
 }

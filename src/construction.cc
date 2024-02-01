@@ -201,10 +201,10 @@ void DetectorConstruction::ConstructOPPAC_1(G4double Pos_PPAC_1)
 {
 
 // scores
-  G4double ScThick_1 =  0.1*mm;
+  G4double ScThick_1 =  3.0*mm;
 
   auto sScore_1 = new G4Box("sScore_1",
-                            50*mm,50*mm,ScThick_1);
+                            50/2*mm,50/2*mm,ScThick_1);
 
   auto fLScore_1 = new G4LogicalVolume(sScore_1,
                                        CF4,
@@ -224,10 +224,10 @@ void DetectorConstruction::ConstructOPPAC_2(G4double Pos_PPAC_2)
 {
 
 // scores
-  G4double ScThick_2 =  3*mm;
+  G4double ScThick_2 =  3.0*mm;
 
   auto sScore_2 = new G4Box("sScore_2",
-                            50*mm,50*mm,ScThick_2);
+                            50/2*mm,50/2*mm,ScThick_2);
 
   auto fLScore_2 = new G4LogicalVolume(sScore_2,
                                        CF4,
@@ -247,10 +247,10 @@ void DetectorConstruction::ConstructOPPAC_3(G4double Pos_PPAC_3)
 {
 
 // scores
-  G4double ScThick_3 =  3*mm;
+  G4double ScThick_3 =  3.0*mm;
 
   auto sScore_3 = new G4Box("sScore_3",
-                            50*mm,50*mm,ScThick_3);
+                            50/2*mm,50/2*mm,ScThick_3);
 
   auto fLScore_3 = new G4LogicalVolume(sScore_3,
                                        CF4,
@@ -273,7 +273,7 @@ void DetectorConstruction::ConstructOPPAC_4(G4double Pos_PPAC_4)
   G4double ScThick_4 =  3.0*mm;
 
   auto sScore_4 = new G4Box("sScore_4",
-                            50*mm,50*mm,ScThick_4);
+                            50/2*mm,50/2*mm,ScThick_4);
 
   auto fLScore_4 = new G4LogicalVolume(sScore_4,
                                        CF4,
@@ -297,7 +297,7 @@ void DetectorConstruction::ConstructOPPAC_5(G4double Pos_PPAC_5)
   G4double ScThick_5 =  3.0*mm;
 
   auto sScore_5 = new G4Box("sScore_5",
-                            50*mm,50*mm,ScThick_5);
+                            50/2*mm,50/2*mm,ScThick_5);
 
   auto fLScore_5 = new G4LogicalVolume(sScore_5,
                                        CF4,
@@ -320,7 +320,7 @@ void DetectorConstruction::ConstructOPPAC_6(G4double Pos_PPAC_6)
   G4double ScThick_6 =  3.0*mm;
 
   auto sScore_6 = new G4Box("sScore_6",
-                            50*mm,50*mm,ScThick_6);
+                            50/2*mm,50/2*mm,ScThick_6);
 
   auto fLScore_6 = new G4LogicalVolume(sScore_6,
                                        CF4,
@@ -343,7 +343,7 @@ void DetectorConstruction::ConstructOPPAC_7(G4double Pos_PPAC_7)
   G4double ScThick_7 =  3.0*mm;
 
   auto sScore_7 = new G4Box("sScore_7",
-                            50*mm,50*mm,ScThick_7);
+                            50/2*mm,50/2*mm,ScThick_7);
 
   auto fLScore_7 = new G4LogicalVolume(sScore_7,
                                        CF4,
@@ -366,7 +366,7 @@ void DetectorConstruction::ConstructOPPAC_8(G4double Pos_PPAC_8)
   G4double ScThick_8 =  3.0*mm;
 
   auto sScore_8 = new G4Box("sScore_8",
-                            50*mm,50*mm,ScThick_8);
+                            50/2*mm,50/2*mm,ScThick_8);
 
   auto fLScore_8 = new G4LogicalVolume(sScore_8,
                                        CF4,
@@ -389,7 +389,7 @@ void DetectorConstruction::ConstructOPPAC_9(G4double Pos_PPAC_9)
   G4double ScThick_9 =  3.0*mm;
 
   auto sScore_9 = new G4Box("sScore_9",
-                            50*mm,50*mm,ScThick_9);
+                            50/2*mm,50/2*mm,ScThick_9);
 
   auto fLScore_9 = new G4LogicalVolume(sScore_9,
                                        CF4,
@@ -413,7 +413,7 @@ void DetectorConstruction::ConstructOPPAC_10(G4double Pos_PPAC_10)
   G4double ScThick_10 =  3.0*mm;
 
   auto sScore_10 = new G4Box("sScore_10",
-                            50*mm,50*mm,ScThick_10);
+                            50/2*mm,50/2*mm,ScThick_10);
 
   auto fLScore_10 = new G4LogicalVolume(sScore_10,
                                        CF4,
@@ -438,7 +438,7 @@ void DetectorConstruction::ConstructSilicon_detector(G4double Pos_Silicon)
   G4double SiliconThick =  3.0*mm;
 
   auto siliconbox = new G4Box("siliconbox",
-                            50*mm,50*mm,SiliconThick);
+                            50/2*mm,50/2*mm,SiliconThick);
 
   auto siliconLV = new G4LogicalVolume(siliconbox,
                                        siliconMaterial,
@@ -493,40 +493,40 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   // shielding
 /////...........first stack layer ...........................................................................
 
-  fhThick = 0.30 * mm;
+  fhThick = 0.12 * mm;
   G4double fhSize = 50 * mm;
-  G4double fhPos = 3.30 * mm;
+  G4double fhPos = 6.24 * mm;
 
-  //CreateAndPlaceShield(fhThick, fhSize, -3.30*mm, fLBox);
-  ConstructOPPAC_1(0*mm);
-/*
+  CreateAndPlaceShield(fhThick, fhSize, 0.00*mm, fLBox);
+  ConstructOPPAC_1(3.12*mm);
+
   CreateAndPlaceShield(fhThick, fhSize, fhPos*mm, fLBox);
-  ConstructOPPAC_2(6.60*mm);
+  ConstructOPPAC_2(9.36*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 9.30*mm, fLBox);
-  ConstructOPPAC_3(12.60*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 12.48*mm, fLBox);
+  ConstructOPPAC_3(15.6*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 15.30*mm, fLBox);
-  ConstructOPPAC_4(18.60*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 18.72*mm, fLBox);
+  ConstructOPPAC_4(21.84*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 21.30*mm, fLBox);
-  ConstructOPPAC_5(24.60*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 24.96*mm, fLBox);
+  ConstructOPPAC_5(28.08*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 27.30*mm, fLBox);
-  ConstructOPPAC_6(30.60*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 31.2*mm, fLBox);
+  ConstructOPPAC_6(34.32*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 33.30*mm, fLBox);
-  ConstructOPPAC_7(36.60*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 37.44*mm, fLBox);
+  ConstructOPPAC_7(40.56*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 39.30*mm, fLBox);
-  ConstructOPPAC_8(42.60*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 43.68*mm, fLBox);
+  ConstructOPPAC_8(46.80*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 45.30*mm, fLBox);
-  ConstructOPPAC_9(48.60*mm);
+  CreateAndPlaceShield(fhThick, fhSize, 49.92*mm, fLBox);
+  ConstructOPPAC_9(53.04*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 51.30*mm, fLBox);
-  ConstructOPPAC_10(54.60*mm);
-*/
+  CreateAndPlaceShield(fhThick, fhSize, 56.16*mm, fLBox);
+  ConstructOPPAC_10(59.28*mm);
+
 
 
 //................................end of first stack...............................................................
@@ -534,7 +534,6 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
 //  ConstructSilicon_detector(10*mm);
 //:::::::::::::::::::::::::::::::::::::second stack layer:::::::::::::::::::::::::::::::::::::
 //  mat_thickness = fhThick; 
-
  /*  
 
   G4double fhThick1 = 0.12 * mm;

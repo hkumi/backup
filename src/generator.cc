@@ -2,6 +2,7 @@
 
 #include "G4Event.hh"
 #include "G4ParticleGun.hh"
+#include "G4GeneralParticleSource.hh"
 #include "G4ParticleTable.hh"
 #include "G4ParticleDefinition.hh"
 #include "G4SystemOfUnits.hh"
@@ -12,10 +13,24 @@ MyPrimaryGenerator::MyPrimaryGenerator()
     fParticleGun = new G4ParticleGun(1);
 
     G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();
-    G4String particleName = "proton";
-    G4ParticleDefinition *particle = particleTable->FindParticle("proton");
+    G4String particleName = "neutron";
+    G4ParticleDefinition *particle = particleTable->FindParticle("neutron");
     fParticleGun->SetParticleDefinition(particle);
     fParticleGun->SetParticleEnergy(2.0*MeV);
+     
+
+    // Set beam spot size (1 x 1 cm²)
+    G4double spotSizeX = 1.0 * cm;
+    G4double spotSizeY = 1.0 * cm;
+
+   // beam defination  =  G4RandGauss::shoot( mean_x, sigma_x );
+
+    spotSizeX =  G4RandGauss::shoot( 0.0, spotSizeX );
+    spotSizeY =  G4RandGauss::shoot( 0.0, spotSizeY );
+    
+
+    //fParticleGun->SetParticlePosition(G4ThreeVector(spotSizeX,spotSizeY,-19.*cm));
+
     fParticleGun->SetParticlePosition(G4ThreeVector(0.*mm,0.*mm,-19.*mm));
     fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
     

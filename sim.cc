@@ -11,6 +11,8 @@
 #include "G4UIExecutive.hh"
 #include "G4VisManager.hh"
 #include "G4VisExecutive.hh"
+#include "Randomize.hh"
+#include "G4GeneralParticleSource.hh"
 
 #include "construction.hh"
 #include "physics.hh"
@@ -41,6 +43,14 @@ int main(int argc, char** argv)
     if (ui)
     {
        UImanager->ApplyCommand("/control/execute vis.mac");
+      // UImanager->ApplyCommand("/control/execute run.mac");
+       /*UImanager->ApplyCommand("/gps/pos/type Beam");
+       UImanager->ApplyCommand("/gps/pos/shape Circle");
+       UImanager->ApplyCommand("/gps/pos/centre 0. 0. 0. cm");
+       UImanager->ApplyCommand("/gps/pos/radius 0.4 cm");
+       UImanager->ApplyCommand("/gps/pos/sigma_x 0.1 cm");
+       UImanager->ApplyCommand("/gps/pos/sigma_y 0.1 cm");
+      */
        ui->SessionStart();
     }
     else
