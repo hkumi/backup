@@ -105,6 +105,18 @@ MyRunAction::MyRunAction()
     man->CreateH2("xy9 ","xy9", 100, -2, 2, 100, -2., 2.0);
     man->CreateH2("xy10 ","xy10", 100,-2, 2, 100, -2., 2.0);
 
+    man->CreateH2("a1 ","angle vs energy_1", 100, -2, 100, 100, -0.5, 2.0);
+    man->CreateH2("a2 ","angle vs energy_2", 100, -2, 100, 100, -0.5, 2.0);
+    man->CreateH2("a3 ","angle vs energy_3", 100, -2, 100, 100, -0.5, 2.0);
+    man->CreateH2("a4 ","angle vs energy_4", 100, -2, 100, 100, -0.5, 2.0);
+    man->CreateH2("a5 ","angle vs energy_5", 100, -2, 100, 100, -0.5, 2.0);
+    man->CreateH2("a6 ","angle vs energy_6", 100, -2, 100, 100, -0.5, 2.0);
+    man->CreateH2("a7 ","angle vs energy_7", 100, -2, 100, 100, -0.5, 2.0);
+    man->CreateH2("a8 ","angle vs energy_8", 100, -2, 100, 100, -0.5, 2.0);
+    man->CreateH2("a9 ","angle vs energy_9", 100, -2, 100, 100, -0.5, 2.0);
+    man->CreateH2("a10 ","angle vs energy_10", 100,-2,100, 100, -0.5, 2.0);
+
+
     man->CreateH1("z1 ","z1", 100, -2, 8);
     man->CreateH1("z2 ","z2", 100, -2, 8);
     man->CreateH1("z3 ","z3", 100, -2, 8);
@@ -115,6 +127,8 @@ MyRunAction::MyRunAction()
     man->CreateH1("z8 ","z8", 100, -2, 8);
     man->CreateH1("z9 ","z9", 100, -2, 8);
     man->CreateH1("z10 ","z10", 100,-2, 8);
+
+    
 
 
 
