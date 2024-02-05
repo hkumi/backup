@@ -1,12 +1,13 @@
+#it beam spot is of 2d gaussian profile with a 5x5 cm2 central plateau created in the z-direction
+
 
 /run/initialize
-/gps/particle proton
-#/gps/particle neutron
+#/gps/particle proton
+/gps/particle neutron
 /gps/energy 2 MeV
 #/gps/position 0. 0. -19. mm
 /gps/direction 0. 0. 1. 
 /gps/pos/type Beam
-# it beam spot is of 2d gaussian profile with a 5x5 cm2 central plateau
 /gps/pos/centre 0. 0. 0. cm
 /gps/pos/halfx 2.5 cm
 /gps/pos/halfy 2.5 cm
@@ -20,5 +21,5 @@
 #/gps/direction 0. 0. 1. 
 
 
-/run/beamOn 100
+/run/beamOn 1000000
 
