@@ -494,169 +494,429 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
 /////...........first stack layer ...........................................................................
 
   fhThick = 0.12 * mm;
-  G4double fhSize = 50 * mm;
-  G4double fhPos = 6.24 * mm;
 
-  CreateAndPlaceShield(fhThick, fhSize, 0.00*mm, fLBox);
-  ConstructOPPAC_1(3.12*mm);
+  if (fhThick == 0.12 * mm){
+     G4double fhSize = 50 * mm;
 
-  CreateAndPlaceShield(fhThick, fhSize, fhPos*mm, fLBox);
-  ConstructOPPAC_2(9.36*mm);
+     //CreateAndPlaceShield(fhThick, fhSize, 0.00*mm, fLBox);
+     ConstructOPPAC_1(3.12*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 12.48*mm, fLBox);
-  ConstructOPPAC_3(15.6*mm);
+     //CreateAndPlaceShield(fhThick, fhSize, 6.24*mm, fLBox);
+     ConstructOPPAC_2(9.36*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 18.72*mm, fLBox);
-  ConstructOPPAC_4(21.84*mm);
+     //CreateAndPlaceShield(fhThick, fhSize, 12.48*mm, fLBox);
+     ConstructOPPAC_3(15.6*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 24.96*mm, fLBox);
-  ConstructOPPAC_5(28.08*mm);
+     //CreateAndPlaceShield(fhThick, fhSize, 18.72*mm, fLBox);
+     ConstructOPPAC_4(21.84*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 31.2*mm, fLBox);
-  ConstructOPPAC_6(34.32*mm);
+     //CreateAndPlaceShield(fhThick, fhSize, 24.96*mm, fLBox);
+     ConstructOPPAC_5(28.08*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 37.44*mm, fLBox);
-  ConstructOPPAC_7(40.56*mm);
+     //CreateAndPlaceShield(fhThick, fhSize, 31.2*mm, fLBox);
+     ConstructOPPAC_6(34.32*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 43.68*mm, fLBox);
-  ConstructOPPAC_8(46.80*mm);
+     //CreateAndPlaceShield(fhThick, fhSize, 37.44*mm, fLBox);
+     ConstructOPPAC_7(40.56*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 49.92*mm, fLBox);
-  ConstructOPPAC_9(53.04*mm);
+     //CreateAndPlaceShield(fhThick, fhSize, 43.68*mm, fLBox);
+     ConstructOPPAC_8(46.80*mm);
 
-  CreateAndPlaceShield(fhThick, fhSize, 56.16*mm, fLBox);
-  ConstructOPPAC_10(59.28*mm);
+     //CreateAndPlaceShield(fhThick, fhSize, 49.92*mm, fLBox);
+     ConstructOPPAC_9(53.04*mm);
+
+     //CreateAndPlaceShield(fhThick, fhSize, 56.16*mm, fLBox);
+     ConstructOPPAC_10(59.28*mm);
+
+  }
 
 
 
-//................................end of first stack...............................................................
-  //ConstructPPAC(5*mm);
-//  ConstructSilicon_detector(10*mm);
+//................................end of first stack..........................................
 //:::::::::::::::::::::::::::::::::::::second stack layer:::::::::::::::::::::::::::::::::::::
-//  mat_thickness = fhThick; 
- /*  
+// 
+   
 
-  G4double fhThick1 = 0.12 * mm;
-  G4double fhPos1 = 15 * mm;
+  else if (fhThick == 0.10 * mm){
+          G4double fhSize = 50 * mm;
 
-  CreateAndPlaceShield(fhThick1, fhSize, fhPos1, fLBox);
-  //CreateAndPlaceShield(0.28*mm, fhSize, 5.02*cm, fLBox);
-  //CreateAndPlaceShield(0.30*mm, fhSize, 5.04*cm, fLBox);
-  //CreateAndPlaceShield(0.32*mm, fhSize, 5.06*cm, fLBox);
-  //CreateAndPlaceShield(0.34*mm, fhSize, 5.08*cm, fLBox);
-  //CreateAndPlaceShield(0.36*mm, fhSize, 5.10*cm, fLBox);
-  //CreateAndPlaceShield(0.38*mm, fhSize, 5.12*cm, fLBox);
-  //CreateAndPlaceShield(0.40*mm, fhSize, 5.14*cm, fLBox);
- 
+          CreateAndPlaceShield(fhThick, fhSize, 0.00*mm, fLBox);
+          ConstructOPPAC_1(3.10*mm);
 
-  ConstructPPAC(20*mm);
+          CreateAndPlaceShield(fhThick, fhSize, 6.20*mm, fLBox);
+          ConstructOPPAC_2(9.3*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 12.40*mm, fLBox);
+          ConstructOPPAC_3(15.50*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 18.60*mm, fLBox);
+          ConstructOPPAC_4(21.70*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 24.80*mm, fLBox);
+          ConstructOPPAC_5(27.90*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 31.00*mm, fLBox);
+          ConstructOPPAC_6(34.10*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 37.20*mm, fLBox);
+          ConstructOPPAC_7(40.30*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 43.40*mm, fLBox);
+          ConstructOPPAC_8(46.50*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 49.60*mm, fLBox);
+          ConstructOPPAC_9(52.70*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 55.80*mm, fLBox);
+          ConstructOPPAC_10(58.90*mm);
+
+  }
 //:::::::::::::::::::::::::::::::::::::end of second stack:::::::::::::::::::::::::::::::.:
   //:::::::::::::::::::::::::::::::::::::third stack layer:::::::::::::::::::::::::::::::::::::
 
 
-  G4double fhThick2 = 0.44 * mm;
-  G4double fhPos2 = 10 * cm;
+  else if (fhThick == 0.14 * mm){
+          G4double fhSize = 50 * mm;
 
-  CreateAndPlaceShield(fhThick2, fhSize, fhPos2, fLBox);
-  CreateAndPlaceShield(0.46*mm, fhSize, 10.02*cm, fLBox);
-  CreateAndPlaceShield(0.48*mm, fhSize, 10.04*cm, fLBox);
-  CreateAndPlaceShield(0.50*mm, fhSize, 10.06*cm, fLBox);
-  CreateAndPlaceShield(0.52*mm, fhSize, 10.08*cm, fLBox);
-  CreateAndPlaceShield(0.54*mm, fhSize, 10.10*cm, fLBox);
-  CreateAndPlaceShield(0.56*mm, fhSize, 10.12*cm, fLBox);
-  CreateAndPlaceShield(0.58*mm, fhSize, 10.14*cm, fLBox);
+          CreateAndPlaceShield(fhThick, fhSize, 0.00*mm, fLBox);
+          ConstructOPPAC_1(3.14*mm);
 
+          CreateAndPlaceShield(fhThick, fhSize, 6.28*mm, fLBox);
+          ConstructOPPAC_2(9.42*mm);
 
-  ConstructPPAC(12*cm);
+  	  CreateAndPlaceShield(fhThick, fhSize, 12.56*mm, fLBox);
+  	  ConstructOPPAC_3(15.70*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 18.84*mm, fLBox);
+  	  ConstructOPPAC_4(21.98*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 25.12*mm, fLBox);
+  	  ConstructOPPAC_5(28.26*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 31.40*mm, fLBox);
+  	  ConstructOPPAC_6(34.54*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 37.68*mm, fLBox);
+  	  ConstructOPPAC_7(40.82*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 43.96*mm, fLBox);
+  	  ConstructOPPAC_8(47.10*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 50.24*mm, fLBox);
+  	  ConstructOPPAC_9(53.38*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 56.52*mm, fLBox);
+  	  ConstructOPPAC_10(59.66*mm);
+  }
 //:::::::::::::::::::::::::::::::::::::end of third stack:::::::::::::::::::::::::::::::.:
    //:::::::::::::::::::::::::::::::::::::forth stack layer:::::::::::::::::::::::::::::::::::::
 
 
-  G4double fhThick3 = 0.60 * mm;
-  G4double fhPos3 = 15 * cm;
+  else if (fhThick == 0.16 * mm){
+          G4double fhSize = 50 * mm;
 
-  CreateAndPlaceShield(fhThick3, fhSize, fhPos3, fLBox);
-  CreateAndPlaceShield(0.62*mm, fhSize, 15.02*cm, fLBox);
-  CreateAndPlaceShield(0.64*mm, fhSize, 15.04*cm, fLBox);
-  CreateAndPlaceShield(0.66*mm, fhSize, 15.06*cm, fLBox);
-  CreateAndPlaceShield(0.68*mm, fhSize, 15.08*cm, fLBox);
-  CreateAndPlaceShield(0.70*mm, fhSize, 15.10*cm, fLBox);
-  CreateAndPlaceShield(0.72*mm, fhSize, 15.12*cm, fLBox);
-  CreateAndPlaceShield(0.74*mm, fhSize, 15.14*cm, fLBox);
- 
+  	  CreateAndPlaceShield(fhThick, fhSize, 0.00*mm, fLBox);
+  	  ConstructOPPAC_1(3.16*mm);
 
-  ConstructPPAC(17*cm);
+  	  CreateAndPlaceShield(fhThick, fhSize, 6.32*mm, fLBox);
+  	  ConstructOPPAC_2(9.48*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 12.64*mm, fLBox);
+  	  ConstructOPPAC_3(15.80*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 18.96*mm, fLBox);
+  	  ConstructOPPAC_4(22.12*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 25.28*mm, fLBox);
+  	  ConstructOPPAC_5(28.44*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 31.60*mm, fLBox);
+  	  ConstructOPPAC_6(34.76*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 37.92*mm, fLBox);
+  	  ConstructOPPAC_7(41.08*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 44.24*mm, fLBox);
+  	  ConstructOPPAC_8(47.40*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 50.56*mm, fLBox);
+  	  ConstructOPPAC_9(53.72*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 56.88*mm, fLBox);
+  	  ConstructOPPAC_10(60.04*mm);
+  }
 //:::::::::::::::::::::::::::::::::::::end of forth stack:::::::::::::::::::::::::::::::.:
 //:::::::::::::::::::::::::::::::::::::fifth stack layer:::::::::::::::::::::::::::::::::::::
 
 
-//  G4double fhThick4 = 0.76 * mm;
-  //G4double fhPos4 = 20 * cm;
+  else if (fhThick == 0.18 * mm){
+  	  G4double fhSize = 50 * mm;
 
-  CreateAndPlaceShield(0.76*mm, fhSize, 20*cm, fLBox);
-  CreateAndPlaceShield(0.78*mm, fhSize, 20.02*cm, fLBox);
-  CreateAndPlaceShield(0.80*mm, fhSize, 20.04*cm, fLBox);
-  CreateAndPlaceShield(0.82*mm, fhSize, 20.06*cm, fLBox);
-  CreateAndPlaceShield(0.84*mm, fhSize, 20.08*cm, fLBox);
-  CreateAndPlaceShield(0.86*mm, fhSize, 20.10*cm, fLBox);
-  CreateAndPlaceShield(0.88*mm, fhSize, 20.12*cm, fLBox);
-  CreateAndPlaceShield(0.90*mm, fhSize, 20.14*cm, fLBox);
-   
- 
+  	  CreateAndPlaceShield(fhThick, fhSize, 0.00*mm, fLBox);
+  	  ConstructOPPAC_1(3.18*mm);
 
-  ConstructPPAC(22*cm);
+  	  CreateAndPlaceShield(fhThick, fhSize, 6.36*mm, fLBox);
+  	  ConstructOPPAC_2(9.54*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 12.72*mm, fLBox);
+  	  ConstructOPPAC_3(15.90*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 19.08*mm, fLBox);
+  	  ConstructOPPAC_4(22.26*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 25.44*mm, fLBox);
+  	  ConstructOPPAC_5(28.62*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 31.80*mm, fLBox);
+  	  ConstructOPPAC_6(34.98*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 38.12*mm, fLBox);
+  	  ConstructOPPAC_7(41.34*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 44.52*mm, fLBox);
+  	  ConstructOPPAC_8(47.70*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 50.88*mm, fLBox);
+  	  ConstructOPPAC_9(54.06*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 57.24*mm, fLBox);
+          ConstructOPPAC_10(60.42*mm);
+  }
 //:::::::::::::::::::::::::::::::::::::end of fifth stack:::::::::::::::::::::::::::::::.:
 
 //:::::::::::::::::::::::::::::::::::::sixth stack layer:::::::::::::::::::::::::::::::::::::
 
 
-  G4double fhThick5 = 0.92 * mm;
-  G4double fhPos5 = 25 * cm;
+  else if (fhThick == 0.20 * mm){
+  	  G4double fhSize = 50 * mm;
 
-  CreateAndPlaceShield(fhThick5, fhSize, fhPos5, fLBox);
-  CreateAndPlaceShield(0.94*mm, fhSize, 25.02*cm, fLBox);
-  CreateAndPlaceShield(0.96*mm, fhSize, 25.04*cm, fLBox);
-  CreateAndPlaceShield(0.98*mm, fhSize, 25.06*cm, fLBox);
-  CreateAndPlaceShield(1.02*mm, fhSize, 25.08*cm, fLBox);
-  CreateAndPlaceShield(1.04*mm, fhSize, 25.10*cm, fLBox);
-  CreateAndPlaceShield(1.06*mm, fhSize, 25.12*cm, fLBox);
-  CreateAndPlaceShield(1.08*mm, fhSize, 25.14*cm, fLBox);
+  	  CreateAndPlaceShield(fhThick, fhSize, 0.00*mm, fLBox);
+  	  ConstructOPPAC_1(3.20*mm);
 
+  	  CreateAndPlaceShield(fhThick, fhSize, 6.40*mm, fLBox);
+  	  ConstructOPPAC_2(9.60*mm);
 
-  ConstructPPAC(27*cm);
+  	  CreateAndPlaceShield(fhThick, fhSize, 12.80*mm, fLBox);
+  	  ConstructOPPAC_3(16.00*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 19.20*mm, fLBox);
+  	  ConstructOPPAC_4(22.40*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 25.60*mm, fLBox);
+  	  ConstructOPPAC_5(28.88*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 32*mm, fLBox);
+  	  ConstructOPPAC_6(35.20*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 38.40*mm, fLBox);
+  	  ConstructOPPAC_7(41.60*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 44.80*mm, fLBox);
+  	  ConstructOPPAC_8(48.00*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 51.20*mm, fLBox);
+          ConstructOPPAC_9(54.40*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 57.60*mm, fLBox);
+  	  ConstructOPPAC_10(60.80*mm);
+  }
 //:::::::::::::::::::::::::::::::::::::end of sixth stack:::::::::::::::::::::::::::::::.:
+
+
+ else if (fhThick == 0.22 * mm){
+          G4double fhSize = 50 * mm;
+
+          CreateAndPlaceShield(fhThick, fhSize, 0.00*mm, fLBox);
+          ConstructOPPAC_1(3.22*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 6.44*mm, fLBox);
+          ConstructOPPAC_2(9.66*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 12.88*mm, fLBox);
+          ConstructOPPAC_3(16.10*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 19.32*mm, fLBox);
+          ConstructOPPAC_4(22.54*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 25.76*mm, fLBox);
+          ConstructOPPAC_5(28.98*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 32.20*mm, fLBox);
+          ConstructOPPAC_6(35.42*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 38.64*mm, fLBox);
+          ConstructOPPAC_7(41.86*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 45.08*mm, fLBox);
+          ConstructOPPAC_8(48.30*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 51.52*mm, fLBox);
+          ConstructOPPAC_9(54.74*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 57.96*mm, fLBox);
+          ConstructOPPAC_10(61.18*mm);
+  }
+
 
 //:::::::::::::::::::::::::::::::::::::seventh stack layer:::::::::::::::::::::::::::::::::::::
 
 
-  G4double fhThick6 = 1.10 * mm;
-  G4double fhPos6 = 28 * cm;
+  else if (fhThick == 0.24 * mm){
+  	  G4double fhSize = 50 * mm;
 
-  CreateAndPlaceShield(fhThick6, fhSize, fhPos6, fLBox);
-  CreateAndPlaceShield(1.12*mm, fhSize, 25.02*cm, fLBox);
-  CreateAndPlaceShield(1.14*mm, fhSize, 25.04*cm, fLBox);
-  CreateAndPlaceShield(1.16*mm, fhSize, 25.06*cm, fLBox);
-  CreateAndPlaceShield(1.18*mm, fhSize, 25.08*cm, fLBox);
-  CreateAndPlaceShield(1.20*mm, fhSize, 25.10*cm, fLBox);
-  CreateAndPlaceShield(1.22*mm, fhSize, 25.12*cm, fLBox);
-  CreateAndPlaceShield(1.24*mm, fhSize, 25.14*cm, fLBox);
- 
+  	  CreateAndPlaceShield(fhThick, fhSize, 0.00*mm, fLBox);
+  	  ConstructOPPAC_1(3.24*mm);
 
-  ConstructPPAC(30*cm);*/
+  	  CreateAndPlaceShield(fhThick, fhSize, 6.48*mm, fLBox);
+  	  ConstructOPPAC_2(9.72*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 12.96*mm, fLBox);
+  	  ConstructOPPAC_3(16.20*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 19.44*mm, fLBox);
+  	  ConstructOPPAC_4(22.68*mm);
+
+ 	  CreateAndPlaceShield(fhThick, fhSize, 25.92*mm, fLBox);
+  	  ConstructOPPAC_5(29.16*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 32.40*mm, fLBox);
+  	  ConstructOPPAC_6(35.64*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 38.88*mm, fLBox);
+  	  ConstructOPPAC_7(42.12*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 45.36*mm, fLBox);
+          ConstructOPPAC_8(48.60*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 51.84*mm, fLBox);
+          ConstructOPPAC_9(55.08*mm);
+
+          CreateAndPlaceShield(fhThick, fhSize, 58.32*mm, fLBox);
+          ConstructOPPAC_10(61.56*mm);
+  }
 //:::::::::::::::::::::::::::::::::::::end of seventh stack:::::::::::::::::::::::::::::::.:
+
+//:::::::::::::::::::::::::::::::::::::Eigth stack layer:::::::::::::::::::::::::::::::::::::
+
+
+  else if (fhThick == 0.26 * mm){
+          G4double fhSize = 50 * mm;
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 0.00*mm, fLBox);
+  	  ConstructOPPAC_1(3.26*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 6.52*mm, fLBox);
+  	  ConstructOPPAC_2(9.78*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 13.04*mm, fLBox);
+  	  ConstructOPPAC_3(16.30*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 19.56*mm, fLBox);
+  	  ConstructOPPAC_4(22.82*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 26.08*mm, fLBox);
+  	  ConstructOPPAC_5(29.34*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 32.60*mm, fLBox);
+          ConstructOPPAC_6(35.86*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 39.12*mm, fLBox);
+  	  ConstructOPPAC_7(42.38*mm);
+
+ 	  CreateAndPlaceShield(fhThick, fhSize, 45.64*mm, fLBox);
+  	  ConstructOPPAC_8(48.90*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 52.16*mm, fLBox);
+  	  ConstructOPPAC_9(55.42*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 58.68*mm, fLBox);
+  	  ConstructOPPAC_10(61.94*mm);
+  }
+//:::::::::::::::::::::::::::::::::::::end of eight stack:::::::::::::::::::::::::::::::.:
+
+
+//:::::::::::::::::::::::::::::::::::::ninth stack layer:::::::::::::::::::::::::::::::::::::
+
+
+  else if (fhThick == 0.28 * mm){
+  	  G4double fhSize = 50 * mm;
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 0.00*mm, fLBox);
+  	  ConstructOPPAC_1(3.20*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 6.56*mm, fLBox);
+  	  ConstructOPPAC_2(9.84*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 13.12*mm, fLBox);
+          ConstructOPPAC_3(16.40*mm);
+
+ 	  CreateAndPlaceShield(fhThick, fhSize, 19.68*mm, fLBox);
+  	  ConstructOPPAC_4(22.96*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 26.24*mm, fLBox);
+  	  ConstructOPPAC_5(29.52*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 32.80*mm, fLBox);
+  	  ConstructOPPAC_6(36.08*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 39.36*mm, fLBox);
+  	  ConstructOPPAC_7(42.64*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 45.92*mm, fLBox);
+  	  ConstructOPPAC_8(49.20*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 52.48*mm, fLBox);
+  	  ConstructOPPAC_9(55.76*mm);
+
+  	  CreateAndPlaceShield(fhThick, fhSize, 59.04*mm, fLBox);
+  	  ConstructOPPAC_10(62.32*mm);
+  }
+//:::::::::::::::::::::::::::::::::::::end of ninth stack:::::::::::::::::::::::::::::::.:
+
+//:::::::::::::::::::::::::::::::::::: tenth stack layer:::::::::::::::::::::::::::::::::::::
+
+
+  else if  (fhThick == 0.30 * mm){
+           G4double fhSize = 50 * mm;
+
+           CreateAndPlaceShield(fhThick, fhSize, 0.00*mm, fLBox);
+           ConstructOPPAC_1(3.30*mm);
+
+  	   CreateAndPlaceShield(fhThick, fhSize, 6.60*mm, fLBox);
+  	   ConstructOPPAC_2(9.90*mm);
+
+  	   CreateAndPlaceShield(fhThick, fhSize, 13.20*mm, fLBox);
+  	   ConstructOPPAC_3(16.50*mm);
+
+ 	   CreateAndPlaceShield(fhThick, fhSize, 19.80*mm, fLBox);
+  	   ConstructOPPAC_4(23.10*mm);
+
+  	   CreateAndPlaceShield(fhThick, fhSize, 26.40*mm, fLBox);
+  	   ConstructOPPAC_5(29.70*mm);
+
+  	   CreateAndPlaceShield(fhThick, fhSize, 33*mm, fLBox);
+  	   ConstructOPPAC_6(36.30*mm);
+
+  	   CreateAndPlaceShield(fhThick, fhSize, 39.60*mm, fLBox);
+  	   ConstructOPPAC_7(42.90*mm);
+
+  	   CreateAndPlaceShield(fhThick, fhSize, 46.20*mm, fLBox);
+  	   ConstructOPPAC_8(49.50*mm);
+
+  	   CreateAndPlaceShield(fhThick, fhSize, 52.80*mm, fLBox);
+  	   ConstructOPPAC_9(56.10*mm);
+
+  	   CreateAndPlaceShield(fhThick, fhSize, 59.40*mm, fLBox);
+  	   ConstructOPPAC_10(62.70*mm);
+  }
+//:::::::::::::::::::::::::::::::::::::end of tenth stack:::::::::::::::::::::::::::::::.:
 
 
   return fPBox;
 }
 
 //...ooooooooooooooooo..................................oooooooooooooooooooo......
-//...oooooooooooooooo...................................oooooooooooooooooooo.....
 
-/*G4double DetectorConstruction::GetMaterialThickness(G4double thick_value)
-{
-   auto Mat_thick = thick_value;
-  //G4RunManager::GetRunManager()->ReinitializeGeometry();
-}*/
 
 
 void DetectorConstruction::ConstructSDandField()

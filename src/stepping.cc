@@ -37,11 +37,7 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
      //track->SetTrackStatus(fStopAndKill);
      G4int stepNumber = track->GetCurrentStepNumber();
      //G4cout << "the track material:" << TrackID << G4endl; 
-     G4double energy = step->GetPreStepPoint()->GetKineticEnergy();
-//     man->FillNtupleDColumn(12, 0, energy);
-  //   man->AddNtupleRow(12);
-     //G4cout << energy << G4endl;
-     
+
 
      G4double edep = step->GetTotalEnergyDeposit();
      G4double edep1 = step->GetTotalEnergyDeposit();
@@ -59,7 +55,7 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
      G4ThreeVector posPhoton; 
      G4StepPoint *preStepPoint; 
      G4StepPoint *postStepPoint ;   
- 
+     G4double ekin_1 ; 
      /*if (step->IsFirstStepInVolume()) {
         fEventAction->SetPosition(step->GetPreStepPoint()->GetPosition()/cm);
         preStepPoint = step->GetPreStepPoint();
@@ -89,10 +85,18 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
 
 
 
+        if(preStepPoint->GetStepStatus() == fGeomBoundary && ekin_1 >= 1.5 && ekin_1 <= 1.6) {
+          G4cout << "Step starts on geometry boundary" << G4endl;
+          G4double elos = step->GetTotalEnergyDeposit();
+          G4cout << "energy  at 1.5MeV =  "<< ekin_1 << G4endl;
+          man->FillNtupleDColumn(12, 0, elos);
+          man->AddNtupleRow(12);
+ 
+
         }
            //man->FillNtupleDColumn(12, 0, energy);
            //man->AddNtupleRow(12);
-
+        }
      }
      if (volume == fScoringVolume_2){
         fEventAction->AddEdep_2(edep_2);

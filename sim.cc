@@ -43,14 +43,16 @@ int main(int argc, char** argv)
     if (ui)
     {
        UImanager->ApplyCommand("/control/execute vis.mac");
-      // UImanager->ApplyCommand("/control/execute run.mac");
-       /*UImanager->ApplyCommand("/gps/pos/type Beam");
-       UImanager->ApplyCommand("/gps/pos/shape Circle");
-       UImanager->ApplyCommand("/gps/pos/centre 0. 0. 0. cm");
-       UImanager->ApplyCommand("/gps/pos/radius 0.4 cm");
-       UImanager->ApplyCommand("/gps/pos/sigma_x 0.1 cm");
-       UImanager->ApplyCommand("/gps/pos/sigma_y 0.1 cm");
-      */
+       UImanager->ApplyCommand("/control/execute run.mac");
+      // UImanager->ApplyCommand("/gun/particle pi+");
+       //UImanager->ApplyCommand("/gps/pos/shape Circle");
+       //UImanager->ApplyCommand("/gps/pos/centre 0. 0. 0. cm");
+       //UImanager->ApplyCommand("/gps/pos/halfx 2.5 cm");
+       //UImanager->ApplyCommand("/gps/pos/halfy 2.5 cm");
+       //UImanager->ApplyCommand("/gps/pos/sigma_x 0.5 cm");
+       //UImanager->ApplyCommand("/gps/pos/sigma_y 0.5 cm");
+     
+      
        ui->SessionStart();
     }
     else
