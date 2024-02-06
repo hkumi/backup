@@ -1,3 +1,5 @@
+#it beam spot is of 2d gaussian profile with a 5x5 cm2 central plateau created in the z-direction
+
 
 /run/initialize
 #/gps/particle proton
