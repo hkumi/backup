@@ -44,13 +44,6 @@ int main(int argc, char** argv)
     {
        UImanager->ApplyCommand("/control/execute vis.mac");
        UImanager->ApplyCommand("/control/execute run.mac");
-      // UImanager->ApplyCommand("/gun/particle pi+");
-       //UImanager->ApplyCommand("/gps/pos/shape Circle");
-       //UImanager->ApplyCommand("/gps/pos/centre 0. 0. 0. cm");
-       //UImanager->ApplyCommand("/gps/pos/halfx 2.5 cm");
-       //UImanager->ApplyCommand("/gps/pos/halfy 2.5 cm");
-       //UImanager->ApplyCommand("/gps/pos/sigma_x 0.5 cm");
-       //UImanager->ApplyCommand("/gps/pos/sigma_y 0.5 cm");
      
       
        ui->SessionStart();
@@ -61,5 +54,8 @@ int main(int argc, char** argv)
        G4String fileName = argv[1];
        UImanager->ApplyCommand(command + fileName);
     }
-    return 0;
+    //job termination
+    delete visManager;
+    delete runManager;
+
 }

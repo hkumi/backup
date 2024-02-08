@@ -56,15 +56,6 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
      G4StepPoint *preStepPoint; 
      G4StepPoint *postStepPoint ;   
      G4double ekin_1 ; 
-     /*if (step->IsFirstStepInVolume()) {
-        fEventAction->SetPosition(step->GetPreStepPoint()->GetPosition()/cm);
-        preStepPoint = step->GetPreStepPoint();
-        //postStepPoint = step->GetPostStepPoint();
-
-        posPhoton = preStepPoint->GetPosition()/cm;
-
-     //man->FillH2(0, posPhoton[0], posPhoton[1]);
-     }*/
 
      if (volume == fScoringVolume_1){
         fEventAction->AddEdep(edep);
@@ -83,7 +74,7 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
            //man->FillNtupleDColumn(12, 0, angle_1/deg);
            //man->AddNtupleRow(12);
 
-
+      /*
 
         if(preStepPoint->GetStepStatus() == fGeomBoundary && ekin_1 >= 1.5 && ekin_1 <= 1.6) {
           G4cout << "Step starts on geometry boundary" << G4endl;
@@ -93,7 +84,7 @@ void MySteppingAction::UserSteppingAction(const G4Step *step)
           man->AddNtupleRow(12);
  
 
-        }
+        }*/
            //man->FillNtupleDColumn(12, 0, energy);
            //man->AddNtupleRow(12);
         }

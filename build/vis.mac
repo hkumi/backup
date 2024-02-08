@@ -9,4 +9,5 @@
 /vis/scene/add/eventID
 /vis/scene/endOfEventAction accumulate 1000000000
 #/gun/particle neutron
-/vis/ogl/set/displayListLimit 5000000
+/vis/ogl/set/displayListLimit 1000000000
+
