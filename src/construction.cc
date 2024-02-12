@@ -160,7 +160,7 @@ void DetectorConstruction::DefineMaterials()
   siliconMaterial->SetMaterialPropertiesTable(CF4PropertiesTable);
 //:....................................................................................
   G4Material *SiO2 = new G4Material("SiO2", 2.201*g/cm3, 2);
-  Aerogel = new G4Material("Aerogel", 0.200*g/cm3, 3);
+   Aerogel = new G4Material("Aerogel", 0.200*g/cm3, 3);
   SiO2->AddElement(nist->FindOrBuildElement("Si"), 1);
   SiO2->AddElement(nist->FindOrBuildElement("O"), 2);
   Aerogel->AddMaterial(SiO2, 62.5*perCent);
@@ -438,7 +438,7 @@ void DetectorConstruction::ConstructSilicon_detector(G4double Pos_Silicon)
   G4double SiliconThick =  3.0*mm;
 
   auto siliconbox = new G4Box("siliconbox",
-                            50/2*mm,50/2*mm,SiliconThick);
+                            25/2*mm,25/2*mm,SiliconThick);
 
   auto siliconLV = new G4LogicalVolume(siliconbox,
                                        siliconMaterial,
@@ -465,7 +465,30 @@ void DetectorConstruction::CreateAndPlaceShield(G4double thickness, G4double siz
                                                "Shield",
                                                motherVolume,
                                                false,
-                                               0);
+                                               0,true);
+}
+
+void DetectorConstruction::Sphereball( G4double position) {
+     G4double minSphereradius = 30*mm; 
+     G4double maxSphereradius = 30.3*mm; 
+     G4Sphere* sphereball = new G4Sphere("sphereball", minSphereradius/2, maxSphereradius/2 , 0*deg,360*deg,0*deg,180*deg);
+     G4LogicalVolume* sphereVolume = new G4LogicalVolume(sphereball, polyethylene, "Sphere");
+     G4PVPlacement* spherePlacement  = new G4PVPlacement(0,
+                                               G4ThreeVector(0.*mm, 0.*mm, position),
+                                               sphereVolume,
+                                               "Sphere",
+                                               fLBox,
+                                               false,
+                                               0,true);
+     G4VisAttributes* blue = new G4VisAttributes(G4Colour::Blue());
+  
+     blue->SetVisibility(true);
+     blue->SetForceAuxEdgeVisible(true);
+
+
+     sphereVolume->SetVisAttributes(blue);
+
+
 }  
 
 
@@ -490,6 +513,11 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
                             false,                      //no boolean operation
                             0);                         //copy number
 
+  Sphereball(2.00*mm); 
+ 
+
+
+
   // shielding
 /////...........first stack layer ...........................................................................
 
@@ -498,35 +526,35 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   if (fhThick == 0.06 * mm){
      G4double fhSize = 50 * mm;
 
-     CreateAndPlaceShield(fhThick, fhSize, 0.00*mm, fLBox);
-     ConstructOPPAC_1(1.56*mm);
+     CreateAndPlaceShield(fhThick, fhSize, 22.00*mm, fLBox);
+     ConstructOPPAC_1(23.56*mm);
 
-     CreateAndPlaceShield(fhThick, fhSize, 3.12*mm, fLBox);
-     ConstructOPPAC_2(4.68*mm);
+     CreateAndPlaceShield(fhThick, fhSize, 25.12*mm, fLBox);
+     ConstructOPPAC_2(26.68*mm);
 
-     CreateAndPlaceShield(fhThick, fhSize, 6.24*mm, fLBox);
-     ConstructOPPAC_3(7.8*mm);
+     CreateAndPlaceShield(fhThick, fhSize, 28.24*mm, fLBox);
+     ConstructOPPAC_3(29.8*mm);
 
-     CreateAndPlaceShield(fhThick, fhSize, 9.36*mm, fLBox);
-     ConstructOPPAC_4(10.92*mm);
+     CreateAndPlaceShield(fhThick, fhSize, 31.36*mm, fLBox);
+     ConstructOPPAC_4(32.92*mm);
 
-     CreateAndPlaceShield(fhThick, fhSize, 12.48*mm, fLBox);
-     ConstructOPPAC_5(14.04*mm);
+     CreateAndPlaceShield(fhThick, fhSize, 34.48*mm, fLBox);
+     ConstructOPPAC_5(36.04*mm);
 
-     CreateAndPlaceShield(fhThick, fhSize, 15.6*mm, fLBox);
-     ConstructOPPAC_6(17.16*mm);
+     CreateAndPlaceShield(fhThick, fhSize, 37.6*mm, fLBox);
+     ConstructOPPAC_6(39.16*mm);
 
-     CreateAndPlaceShield(fhThick, fhSize, 18.72*mm, fLBox);
-     ConstructOPPAC_7(20.28*mm);
+     CreateAndPlaceShield(fhThick, fhSize, 40.72*mm, fLBox);
+     ConstructOPPAC_7(42.28*mm);
 
-     CreateAndPlaceShield(fhThick, fhSize, 21.84*mm, fLBox);
-     ConstructOPPAC_8(23.4*mm);
+     CreateAndPlaceShield(fhThick, fhSize, 43.84*mm, fLBox);
+     ConstructOPPAC_8(45.4*mm);
 
-     CreateAndPlaceShield(fhThick, fhSize, 24.96*mm, fLBox);
-     ConstructOPPAC_9(26.52*mm);
+     CreateAndPlaceShield(fhThick, fhSize, 46.96*mm, fLBox);
+     ConstructOPPAC_9(48.52*mm);
 
-     CreateAndPlaceShield(fhThick, fhSize, 28.08*mm, fLBox);
-     ConstructOPPAC_10(29.64*mm);
+     CreateAndPlaceShield(fhThick, fhSize, 50.08*mm, fLBox);
+     ConstructOPPAC_10(51.64*mm);
 
   }
 

@@ -8,6 +8,9 @@
 #include "G4VPhysicalVolume.hh"
 #include "G4LogicalVolume.hh"
 #include "G4Box.hh"
+#include "G4Sphere.hh"
+#include "G4Colour.hh"
+#include "G4VisAttributes.hh"
 #include "G4Tubs.hh"
 #include "G4PVPlacement.hh"
 #include "G4NistManager.hh"
@@ -55,6 +58,7 @@ public:
     void ConstructOPPAC_10(G4double Pos_PPAC_10);
     void ConstructSilicon_detector(G4double Pos_Silicon);
     void CreateAndPlaceShield(G4double thickness, G4double size, G4double position, G4LogicalVolume* motherVolume) ;
+    void Sphereball( G4double position);
 
 private:
      G4Box  *sBox,*FoShield, *TShield,*fShield,*sShield,*sScore,*solidDetector;

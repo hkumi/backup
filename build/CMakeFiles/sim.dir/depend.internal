@@ -2153,6 +2153,8 @@ CMakeFiles/sim.dir/src/action.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4CacheDetails.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ChargedGeantino.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ClassificationOfNewTrack.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Color.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Colour.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4DCofThisEvent.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4DataInterpolation.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4DataVector.hh
@@ -2294,6 +2296,8 @@ CMakeFiles/sim.dir/src/action.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SmartVoxelNode.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SmartVoxelProxy.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SmartVoxelProxy.icc
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Sphere.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Sphere.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4StackManager.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4StackedTrack.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Step.hh
@@ -2347,6 +2351,7 @@ CMakeFiles/sim.dir/src/action.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UImessenger.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UIparameter.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UItokenNum.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4USphere.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UTubs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UserEventAction.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UserRunAction.hh
@@ -2382,6 +2387,8 @@ CMakeFiles/sim.dir/src/action.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VUserPrimaryGeneratorAction.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VUserTrackInformation.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VVolumeMaterialScanner.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VisAttributes.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VisAttributes.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VisExtent.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Visible.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Visible.icc
@@ -2399,6 +2406,7 @@ CMakeFiles/sim.dir/src/action.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/geomdefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/geomwdefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/globals.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/graphics_reps_defs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/pwdefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/rundefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/templates.hh
@@ -2474,6 +2482,8 @@ CMakeFiles/sim.dir/src/construction.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Box.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4CSGSolid.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4CollectionNameVector.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Color.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Colour.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4DataVector.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4DataVector.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4DensityEffectCalculator.hh
@@ -2554,6 +2564,8 @@ CMakeFiles/sim.dir/src/construction.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SDStructure.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SandiaTable.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SensitiveVolumeList.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Sphere.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Sphere.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Step.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Step.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4StepPoint.hh
@@ -2585,6 +2597,7 @@ CMakeFiles/sim.dir/src/construction.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UImessenger.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UIparameter.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UItokenNum.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4USphere.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UTubs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UnitsTable.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UnitsTable.icc
@@ -2603,6 +2616,8 @@ CMakeFiles/sim.dir/src/construction.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VTouchable.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VUserDetectorConstruction.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VUserTrackInformation.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VisAttributes.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VisAttributes.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VisExtent.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Visible.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Visible.icc
@@ -2616,6 +2631,7 @@ CMakeFiles/sim.dir/src/construction.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/geomdefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/geomwdefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/globals.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/graphics_reps_defs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/pwdefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/templates.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/tls.hh
@@ -2723,6 +2739,8 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Box.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4CSGSolid.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ClassificationOfNewTrack.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Color.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Colour.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4DCofThisEvent.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4DataVector.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4DataVector.icc
@@ -2852,6 +2870,8 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SmartVoxelNode.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SmartVoxelProxy.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SmartVoxelProxy.icc
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Sphere.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Sphere.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4StackManager.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4StackedTrack.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Step.hh
@@ -2905,6 +2925,7 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UImessenger.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UIparameter.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UItokenNum.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4USphere.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UTubs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UnitsTable.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UnitsTable.icc
@@ -2939,6 +2960,8 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VUserEventInformation.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VUserTrackInformation.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VVolumeMaterialScanner.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VisAttributes.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VisAttributes.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VisExtent.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Visible.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Visible.icc
@@ -2956,6 +2979,7 @@ CMakeFiles/sim.dir/src/event.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/geomdefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/geomwdefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/globals.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/graphics_reps_defs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/pwdefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/rundefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/templates.hh
@@ -3733,6 +3757,8 @@ CMakeFiles/sim.dir/src/stepping.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Box.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4CSGSolid.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4ClassificationOfNewTrack.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Color.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Colour.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4DCofThisEvent.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4DataVector.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4DataVector.icc
@@ -3862,6 +3888,8 @@ CMakeFiles/sim.dir/src/stepping.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SmartVoxelNode.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SmartVoxelProxy.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4SmartVoxelProxy.icc
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Sphere.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Sphere.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4StackManager.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4StackedTrack.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Step.hh
@@ -3915,6 +3943,7 @@ CMakeFiles/sim.dir/src/stepping.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UImessenger.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UIparameter.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UItokenNum.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4USphere.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UTubs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UserEventAction.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4UserRunAction.hh
@@ -3947,6 +3976,8 @@ CMakeFiles/sim.dir/src/stepping.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VUserEventInformation.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VUserTrackInformation.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VVolumeMaterialScanner.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VisAttributes.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VisAttributes.icc
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4VisExtent.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Visible.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/G4Visible.icc
@@ -3964,6 +3995,7 @@ CMakeFiles/sim.dir/src/stepping.cc.o
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/geomdefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/geomwdefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/globals.hh
+ /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/graphics_reps_defs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/pwdefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/rundefs.hh
  /home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4/templates.hh
