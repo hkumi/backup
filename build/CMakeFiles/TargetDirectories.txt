@@ -1,4 +1,4 @@
-/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/rebuild_cache.dir
-/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/Simulation.dir
-/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/edit_cache.dir
-/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir
+/home/harriet/geant4/neutron_example/Neutron_optical_detector/build/CMakeFiles/rebuild_cache.dir
+/home/harriet/geant4/neutron_example/Neutron_optical_detector/build/CMakeFiles/Simulation.dir
+/home/harriet/geant4/neutron_example/Neutron_optical_detector/build/CMakeFiles/edit_cache.dir
+/home/harriet/geant4/neutron_example/Neutron_optical_detector/build/CMakeFiles/sim.dir

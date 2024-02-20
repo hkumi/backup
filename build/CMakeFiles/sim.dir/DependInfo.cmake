@@ -1,52 +1,25 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/harriet/Geant4/neutron_example/n2/sim.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/sim.cc.o"
-  "/home/harriet/Geant4/neutron_example/n2/src/ElectromagneticPhysics.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/ElectromagneticPhysics.cc.o"
-  "/home/harriet/Geant4/neutron_example/n2/src/HadronElasticPhysicsHP.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/HadronElasticPhysicsHP.cc.o"
-  "/home/harriet/Geant4/neutron_example/n2/src/NeutronHPMessenger.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/NeutronHPMessenger.cc.o"
-  "/home/harriet/Geant4/neutron_example/n2/src/NeutronHPphysics.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/NeutronHPphysics.cc.o"
-  "/home/harriet/Geant4/neutron_example/n2/src/action.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/action.cc.o"
-  "/home/harriet/Geant4/neutron_example/n2/src/construction.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/construction.cc.o"
-  "/home/harriet/Geant4/neutron_example/n2/src/event.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/event.cc.o"
-  "/home/harriet/Geant4/neutron_example/n2/src/generator.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/generator.cc.o"
-  "/home/harriet/Geant4/neutron_example/n2/src/physics.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/physics.cc.o"
-  "/home/harriet/Geant4/neutron_example/n2/src/run.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/run.cc.o"
-  "/home/harriet/Geant4/neutron_example/n2/src/stepping.cc" "/home/harriet/Geant4/neutron_example/n2/build/CMakeFiles/sim.dir/src/stepping.cc.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# Preprocessor definitions for this target.
-set(CMAKE_TARGET_DEFINITIONS_CXX
-  "G4LIB_BUILD_DLL"
-  "G4UI_USE_QT"
-  "G4UI_USE_TCSH"
-  "G4VIS_USE_OPENGL"
-  "G4VIS_USE_OPENGLQT"
-  "G4VIS_USE_TOOLSSG_QT_GLES"
-  "PTL_BUILD_DLL"
-  "QT_CORE_LIB"
-  "QT_GUI_LIB"
-  "QT_NO_DEBUG"
-  "QT_OPENGL_LIB"
-  "QT_PRINTSUPPORT_LIB"
-  "QT_WIDGETS_LIB"
   )
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../include"
-  "/home/harriet/Geant4/geant4-v11.1.3/geant4_install/include/Geant4"
-  "/usr/include/x86_64-linux-gnu/qt5"
-  "/usr/include/x86_64-linux-gnu/qt5/QtCore"
-  "/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"
-  "/usr/include/x86_64-linux-gnu/qt5/QtGui"
-  "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
-  "/usr/include/x86_64-linux-gnu/qt5/QtOpenGL"
-  "/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/harriet/geant4/neutron_example/Neutron_optical_detector/sim.cc" "CMakeFiles/sim.dir/sim.cc.o" "gcc" "CMakeFiles/sim.dir/sim.cc.o.d"
+  "/home/harriet/geant4/neutron_example/Neutron_optical_detector/src/ElectromagneticPhysics.cc" "CMakeFiles/sim.dir/src/ElectromagneticPhysics.cc.o" "gcc" "CMakeFiles/sim.dir/src/ElectromagneticPhysics.cc.o.d"
+  "/home/harriet/geant4/neutron_example/Neutron_optical_detector/src/HadronElasticPhysicsHP.cc" "CMakeFiles/sim.dir/src/HadronElasticPhysicsHP.cc.o" "gcc" "CMakeFiles/sim.dir/src/HadronElasticPhysicsHP.cc.o.d"
+  "/home/harriet/geant4/neutron_example/Neutron_optical_detector/src/NeutronHPMessenger.cc" "CMakeFiles/sim.dir/src/NeutronHPMessenger.cc.o" "gcc" "CMakeFiles/sim.dir/src/NeutronHPMessenger.cc.o.d"
+  "/home/harriet/geant4/neutron_example/Neutron_optical_detector/src/NeutronHPphysics.cc" "CMakeFiles/sim.dir/src/NeutronHPphysics.cc.o" "gcc" "CMakeFiles/sim.dir/src/NeutronHPphysics.cc.o.d"
+  "/home/harriet/geant4/neutron_example/Neutron_optical_detector/src/action.cc" "CMakeFiles/sim.dir/src/action.cc.o" "gcc" "CMakeFiles/sim.dir/src/action.cc.o.d"
+  "/home/harriet/geant4/neutron_example/Neutron_optical_detector/src/construction.cc" "CMakeFiles/sim.dir/src/construction.cc.o" "gcc" "CMakeFiles/sim.dir/src/construction.cc.o.d"
+  "/home/harriet/geant4/neutron_example/Neutron_optical_detector/src/event.cc" "CMakeFiles/sim.dir/src/event.cc.o" "gcc" "CMakeFiles/sim.dir/src/event.cc.o.d"
+  "/home/harriet/geant4/neutron_example/Neutron_optical_detector/src/generator.cc" "CMakeFiles/sim.dir/src/generator.cc.o" "gcc" "CMakeFiles/sim.dir/src/generator.cc.o.d"
+  "/home/harriet/geant4/neutron_example/Neutron_optical_detector/src/physics.cc" "CMakeFiles/sim.dir/src/physics.cc.o" "gcc" "CMakeFiles/sim.dir/src/physics.cc.o.d"
+  "/home/harriet/geant4/neutron_example/Neutron_optical_detector/src/run.cc" "CMakeFiles/sim.dir/src/run.cc.o" "gcc" "CMakeFiles/sim.dir/src/run.cc.o.d"
+  "/home/harriet/geant4/neutron_example/Neutron_optical_detector/src/stepping.cc" "CMakeFiles/sim.dir/src/stepping.cc.o" "gcc" "CMakeFiles/sim.dir/src/stepping.cc.o.d"
   )
 
 # Targets to which this target links.
