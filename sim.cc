@@ -42,8 +42,8 @@ int main(int argc, char** argv)
     visManager->Initialize();
     if (ui)
     {
-       UImanager->ApplyCommand("/control/execute vis.mac");
-      // UImanager->ApplyCommand("/control/execute run.mac");
+       //UImanager->ApplyCommand("/control/execute vis.mac");
+       UImanager->ApplyCommand("/control/execute run.mac");
      
       
        ui->SessionStart();

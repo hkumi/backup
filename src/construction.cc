@@ -513,7 +513,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
                             false,                      //no boolean operation
                             0);                         //copy number
 
- // Sphereball(2.00*mm); 
+  Sphereball(2.00*mm); 
  
 
 
@@ -521,7 +521,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   // shielding
 /////...........first stack layer ...........................................................................
 
-  fhThick = 0.05 * mm;   // this will be for a thickness of  0.12mm. halfZ
+  fhThick = 0.06 * mm;   // this will be for a thickness of  0.12mm. halfZ
 
   if (fhThick == 0.06 * mm){
      G4double fhSize = 50 * mm;
@@ -584,7 +584,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
           CreateAndPlaceShield(fhThick, fhSize, 12.48*mm, fLBox);
           ConstructOPPAC_5(14.04*mm);
 
-          CreateAndPlaceShield(fhThick, fhSize, 15.56*mm, fLBox);
+          CreateAndPlaceShield(fhThick, fhSize, 15.6*mm, fLBox);
           ConstructOPPAC_6(17.16*mm);
 
           CreateAndPlaceShield(fhThick, fhSize, 18.72*mm, fLBox);

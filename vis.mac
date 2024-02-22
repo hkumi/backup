@@ -10,4 +10,4 @@
 /vis/scene/endOfEventAction accumulate 1000000000
 #/gun/particle neutron
 /vis/ogl/set/displayListLimit 1000000000
-/run/beamOn 1000000
+#/run/beamOn 1000000
