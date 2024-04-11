@@ -6,6 +6,7 @@
 #include "G4RunManagerFactory.hh"
 #include "construction.hh"
 #include "action.hh"
+#include "physics.hh"
 #include "G4EmStandardPhysics_option4.hh"
 #include "G4OpticalPhysics.hh"
 #include "G4SteppingVerbose.hh"
@@ -33,12 +34,7 @@ int main(int argc,char** argv)
   runManager->SetUserInitialization(new DetectorConstruction());
 
   // Physics list
-  G4VModularPhysicsList* physicsList = new QGSP_BERT_HP;
-  physicsList->ReplacePhysics(new G4EmStandardPhysics_option4());
-  auto opticalPhysics = new G4OpticalPhysics();
-  physicsList->RegisterPhysics(opticalPhysics);
-  physicsList->SetVerboseLevel(1);
-  runManager->SetUserInitialization(physicsList);
+   runManager->SetUserInitialization(new PhysicsList());   
 
   // User action initialization
   runManager->SetUserInitialization(new MyActionInitialization());

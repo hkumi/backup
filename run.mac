@@ -6,7 +6,7 @@
 /run/verbose 2
 
 /gps/particle neutron
-/gps/energy 2 MeV
+/gps/energy 100 keV
 #/gps/position 0. 0. -19. mm
 /gps/direction 0. 0. 1.
 /gps/pos/type Beam
@@ -18,4 +18,4 @@
 /gps/pos/sigma_y 0.5 cm
 
 /run/printProgress 100
-/run/beamOn 1000000000
+/run/beamOn 99000000
